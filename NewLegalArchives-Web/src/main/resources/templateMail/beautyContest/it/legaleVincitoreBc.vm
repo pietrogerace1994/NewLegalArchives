@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Vincitore Beauty Contest ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px; font-size: 12px;">
+        	Egr. Avv., 
+        	<br>
+        	<br>
+        	Siamo lieti di comunicarle che le &egrave; stato affidato l' incarico per l'attivit&agrave; descritta nello SoW di seguito :
+        	<br>
+			<br>
+        	${newMessage.nomeDocumento} - ${newMessage.bcSow}
+        	<br>
+			<br>
+        	Restiamo a disposizione per qualsiasi dubbio o chiarimento
+        	<br>
+			<br>
+			<br>
+        	Cordiali Saluti
+        	<br>
+        	<hr>
+			<br>
+			Dear Counsel, 
+        	<br>
+        	<br>
+        	We are pleased to inform you that you have been committed to the task described in the SoW below:
+        	<br>
+			<br>
+        	${newMessage.nomeDocumento} - ${newMessage.bcSow}
+        	<br>
+			<br>
+        	We remain available for any doubt or clarification
+        	<br>
+			<br>
+			<br>
+        	Best Regards
+        	<br>
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

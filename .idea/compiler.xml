@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="NewLegalArchives-Util" />
+        <module name="NewLegalArchives-Business" />
+        <module name="NewLegalArchives-Persistence" />
+        <module name="NewLegalArchives-Ear" />
+        <module name="NewLegalArchives-Web" />
+        <module name="NewLegalArchives-Model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="NewLegalArchives-Business" target="1.8" />
+      <module name="NewLegalArchives-Ear" target="1.8" />
+      <module name="NewLegalArchives-Model" target="1.8" />
+      <module name="NewLegalArchives-Persistence" target="1.8" />
+      <module name="NewLegalArchives-Util" target="1.8" />
+      <module name="NewLegalArchives-Web" target="1.8" />
+      <module name="NewLegalArchivesPrj" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

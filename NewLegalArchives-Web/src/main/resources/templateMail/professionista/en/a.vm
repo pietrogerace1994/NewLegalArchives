@@ -1,0 +1,95 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Authorization of insertion of ${newMessage.tipoProfessionista} in list: ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+          Insertion in list of ${newMessage.tipoProfessionista} ${newMessage.nomeDocumento} has been authorized.<br><br>
+		  ${newMessage.tipoProfessionista} details: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">
+              <td>Tax Code</td>
+              <td>${newMessage.codiceFiscale}</td>
+            </tr>
+			<tr>
+              <td colspan="1">Specializations</td><td></td>
+            </tr>
+			#if (${newMessage.listaSpecializzazioni.size()} > 0 )            
+            <tr>
+              <td colspan="2">
+	            <table  style="font-family: verdana, arial, helvetica; font-size: 13px;" width="90%">
+	            #foreach($specializzazione in ${newMessage.listaSpecializzazioni})
+	            <tr>
+	               <td>-</td><td>${specializzazione}</td>
+	            </tr>              
+	            #end    
+	            </table>   
+              </td>
+            </tr>  
+            #end 
+        </table>
+          Outside law firm details: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">
+            </tr>           
+            <tr>
+              <td>Outside law firm</td>
+              <td>${newMessage.studioLegale}</td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>${newMessage.indirizzo}</td>
+            </tr>
+            <tr>
+              <td>City</td>
+              <td>${newMessage.citta}</td>
+            </tr>
+            <tr>
+              <td>PO Box</td>
+              <td>${newMessage.cap}</td>
+            </tr>             
+            <tr>
+              <td>Country</td>
+              <td>${newMessage.paese}</td>
+            </tr>
+            <tr>
+              <td>Telephone</td>
+              <td>${newMessage.telefono}</td>
+            </tr>
+            <tr>
+              <td>Fax</td>
+              <td>${newMessage.fax}</td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td>${newMessage.email}</td>
+            </tr>
+            <tr>
+              <td>VAT Identification Number</td>
+              <td>${newMessage.partitaIva}</td>
+            </tr>
+         </table>
+		
+		Request details: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">  
+            <tr>
+              <td>Brief</td>
+              <td>${newMessage.motivazioneRichiesta}</td>
+            </tr>
+            <tr>
+              <td>Requesting user</td>
+              <td>${newMessage.utenteRichiedente}</td>
+            </tr>
+            <tr>
+              <td>Requesting legal unit</td>
+              <td>${newMessage.unitaLegale}</td>
+            </tr>
+          </table>
+         </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

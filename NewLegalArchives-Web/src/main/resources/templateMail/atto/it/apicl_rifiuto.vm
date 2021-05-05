@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Rifiuto presa in carico legale Atto Alesoc ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+          La presa in carico dell'Atto Alesoc ${newMessage.linkAlDocumento} &egrave; stata rifiutata da ${newMessage.utenteRifiuto}<br>
+          #if (${newMessage.motivazioneRifiuto} != "")
+          Il motivo del rifiuto &egrave;: ${newMessage.motivazioneRifiuto}<br>
+          #end
+          E' necessario procedere nuovamente all'indicazione del responsabile competente.
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+  <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12" style="font-size: 12px;padding-top: 10px;padding-bottom: 45px;text-align: center;color: #8a8a8a;">
+   <!-- Gli articoli pubblicati hanno un fine meramente informativo e non costituiscono pareri legali. Per ogni esigenza interpretativa e/o applicativa è necessario rivolgersi alla Direzione Affari Legali, Societari, Compliance e Enterprise Risk Management. Per problemi di tipo tecnico rivolgersi al seguente indirizzo : mbx.legalarchives@snam.it  -->
+  Gli articoli hanno un fine informativo e non costituiscono pareri legali. Per ogni esigenza interpretativa e applicativa è possibile rivolgersi alla Funzione Legale. Per problemi di tipo tecnico rivolgersi al seguente indirizzo: mbx.legalarchives@snam.it.
+  </div>

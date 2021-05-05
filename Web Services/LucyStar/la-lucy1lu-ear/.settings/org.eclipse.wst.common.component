@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="la-lucy1lu-ear-1.0.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="laws-lucy1luactivator-1.0.0.war" deploy-path="/" handle="module:/resource/laws-lucy1luactivator/laws-lucy1luactivator">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="la-lucy1lu-senderservice-1.0.0.jar" deploy-path="/" handle="module:/resource/la-lucy1lu-senderservice/la-lucy1lu-senderservice">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="la-lucy1lu-entity-1.0.0.jar" deploy-path="/" handle="module:/resource/la-lucy1lu-entity/la-lucy1lu-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="la-lucy1lu-senderservice-1.0.0-client.jar" deploy-path="/" handle="module:/resource/la-lucy1lu-senderservice/la-lucy1lu-senderservice">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.12.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/log4j/log4j/1.2.12/log4j-1.2.12.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

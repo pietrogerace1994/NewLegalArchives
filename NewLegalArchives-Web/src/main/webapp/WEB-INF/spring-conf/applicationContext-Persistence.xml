@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	  http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	  http://www.springframework.org/schema/tx
+	  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	  http://www.springframework.org/schema/aop  
+	  http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	  http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:config.properties</value>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>${jndi.datasource}</value>
+		</property>
+	</bean>
+
+	<!-- Session Factory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="eng.la.model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.default_batch_fetch_size">16</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+		     <list>
+		       <value>eng.la.model.Property</value>
+     		</list>
+   		</property>
+	</bean>
+
+	<!-- Configurazione transaction manager -->
+	<!-- <tx:annotation-driven/> -->
+
+	<bean id="auditInterceptor"
+		class="eng.la.persistence.audit.AuditInterceptor">  
+	</bean>
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="entityInterceptor" ref="auditInterceptor" /> 
+
+	</bean>
+
+	<tx:annotation-driven />
+	<!-- ******************************* ***** CACHE CONFIGURATION ***** ******************************* -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="ehcache" />
+	</bean>
+
+	<bean id="ehcache"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache/ehcache.xml" />
+		<property name="shared" value="true" />
+	</bean>
+
+	<bean id="documentaleDAO" class="eng.la.persistence.DocumentaleDAOImpl">
+		<constructor-arg name="url" value="${filenet.url}"></constructor-arg>
+		<constructor-arg name="username" value="${filenet.username}"></constructor-arg>
+		<constructor-arg name="password" value="${filenet.password}"></constructor-arg>
+		<constructor-arg name="stanza" value="${filenet.stanza}"></constructor-arg>
+		<constructor-arg name="osname" value="${filenet.osname}"></constructor-arg>
+	</bean>
+
+	<bean id="documentaleCryptDAO" class="eng.la.persistence.DocumentaleCryptDAOImpl">
+		<constructor-arg name="url" value="${filenet.url}"></constructor-arg>
+		<constructor-arg name="username" value="${filenet.username}"></constructor-arg>
+		<constructor-arg name="password" value="${filenet.password}"></constructor-arg>
+		<constructor-arg name="stanza" value="${filenet.stanza}"></constructor-arg>
+		<constructor-arg name="osname" value="${filenet.osnamecrypt}"></constructor-arg>
+	</bean>
+	<bean id="documentaleDdsDAO" class="eng.la.persistence.DocumentaleDdsDAOImpl">
+		<constructor-arg name="url" value="${filenet.url}"></constructor-arg>
+		<constructor-arg name="username" value="${filenet.username}"></constructor-arg>
+		<constructor-arg name="password" value="${filenet.password}"></constructor-arg>
+		<constructor-arg name="stanza" value="${filenet.stanza}"></constructor-arg>
+		<constructor-arg name="osname" value="${filenet.osname}"></constructor-arg>
+	</bean>
+
+	<bean id="documentaleDdsCryptDAO" class="eng.la.persistence.DocumentaleDdsCryptDAOImpl">
+		<constructor-arg name="url" value="${filenet.url}"></constructor-arg>
+		<constructor-arg name="username" value="${filenet.username}"></constructor-arg>
+		<constructor-arg name="password" value="${filenet.password}"></constructor-arg>
+		<constructor-arg name="stanza" value="${filenet.stanza}"></constructor-arg>
+		<constructor-arg name="osname" value="${filenet.osnamecrypt}"></constructor-arg>
+	</bean>
+	<cache:annotation-driven />
+</beans>

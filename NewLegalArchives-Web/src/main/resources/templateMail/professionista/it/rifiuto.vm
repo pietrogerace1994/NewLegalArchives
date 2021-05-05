@@ -1,0 +1,97 @@
+<html>
+  <body>
+   <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Rifiuto inserimento in elenco ${newMessage.tipoProfessionista} ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+          L'inserimento in elenco del professionista ${newMessage.tipoProfessionista} ${newMessage.nomeDocumento} non &egrave; stato autorizzato.<br>
+          Il motivo del rifiuto &egrave;: ${newMessage.motivazioneRifiuto} <br><br>
+          Dettagli del professionista: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">
+              <td>Codice Fiscale</td>
+              <td>${newMessage.codiceFiscale}</td>
+            </tr>
+			<tr>
+              <td colspan="1">Specializzazioni</td><td></td>
+            </tr>
+			#if (${newMessage.listaSpecializzazioni.size()} > 0 )            
+            <tr>
+              <td colspan="2">
+	            <table  style="font-family: verdana, arial, helvetica; font-size: 13px;" width="90%">
+	            #foreach($specializzazione in ${newMessage.listaSpecializzazioni})
+	            <tr>
+	               <td>-</td><td>${specializzazione}</td>
+	            </tr>              
+	            #end    
+	            </table>   
+              </td>
+            </tr>  
+            #end 
+        </table>
+          Dettagli dello Studio Legale: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">
+            <tr>
+              <td>Studio Legale</td>
+              <td>$(newMessage.studioLegale)</td>
+            </tr>
+            <tr>
+              <td>Indirizzo</td>
+              <td>${newMessage.indirizzo}</td>
+            </tr>
+            <tr>
+              <td>Citta</td>
+              <td>${newMessage.citta}</td>
+            </tr>
+            <tr>
+              <td>Cap</td>
+              <td>${newMessage.cap}</td>
+            </tr>            
+            <tr>
+              <td>Paese</td>
+              <td>${newMessage.paese}</td>
+            </tr>
+            <tr>
+              <td>Telefono</td>
+              <td>${newMessage.telefono}</td>
+            </tr>
+            <tr>
+              <td>Fax</td>
+              <td>${newMessage.fax}</td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td>${newMessage.email}</td>
+            </tr>
+            <tr>
+              <td>Partita Iva</td>
+              <td>${newMessage.partitaIva}</td>
+            </tr>
+            <tr>
+		</table>
+		
+		Dettagli della richiesta: <br><br>
+          <table border="1" style="font-family: verdana, arial, helvetica; font-size: 13px;">
+            <tr>
+              <td>Motivazione</td>
+              <td>${newMessage.motivazioneRichiesta}</td>
+            </tr>
+			 <tr>
+              <td>Utente Richiedente</td>
+              <td>${newMessage.utenteRichiedente}</td>
+            </tr>
+			<tr>
+              <td>Unit&agrave; richiedente</td>
+              <td>${newMessage.unitaLegale}</td>
+            </tr>
+          </table>
+          <br>
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

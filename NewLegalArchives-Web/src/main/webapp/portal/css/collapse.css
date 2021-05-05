@@ -1,0 +1,41 @@
+.collapsible {
+  background-color: #006643;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #FFFFFF;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+
+.active-video, .collapsible:hover {
+  background-color: #5E9CAE;
+}
+
+
+.content-div-video {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible:after {
+  content: '\f055'; /* Unicode character for "plus" sign (+) */
+  font-size: 23px;
+  font-family: FontAwesome;
+  color:  #FFFFFF;
+  float: right;
+  margin-left: 5px;
+}
+
+.active-video:after {
+  content: "\f056"; /* Unicode character for "minus" sign (-) */
+}

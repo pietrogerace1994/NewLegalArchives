@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PartiCorrelateRicerca3" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="565" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" resourceBundle="reporti18n" whenResourceMissingType="Key" uuid="82ebeff6-7773-416a-8725-d8bfa47ccef6">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="117"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<import value="eng.la.util.report.*"/>
+	<template><![CDATA["LegalArchivesStyles.jrtx"]]></template>
+	<style name="gridHeaderEsito">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.TRUE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#00447B" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.FALSE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB7100" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR} == null || $P{SUBREPORT_DIR}.equals("C:/Users/Luigi Nardiello/Documents/shared/") ? "" : $P{SUBREPORT_DIR}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="language" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Codice Lingua  ex "it" "en" etc.]]></parameterDescription>
+		<defaultValueExpression><![CDATA["it"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="user" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Utente di stampa]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Utente Stampa..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="recordFound" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Record Trovati]]></parameterDescription>
+		<defaultValueExpression><![CDATA["1..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportFilter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Report Filter..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="country" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["IT"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printFooterPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Piè di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printHeaderPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Testata di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="expandedFormat" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTitle" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Titolo del report]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Report"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="denominazioneInput" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="codfiscPivaInput" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[codice fiscale o p. iva in input]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataInput" class="java.util.Date" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="esito" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[esito della ricerca]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isGuestUser" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[isGuestUser]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="codFiscale" class="java.lang.String">
+		<fieldDescription><![CDATA[codFiscale]]></fieldDescription>
+	</field>
+	<field name="denominazione" class="java.lang.String">
+		<fieldDescription><![CDATA[denominazione]]></fieldDescription>
+	</field>
+	<field name="tipoCorrelazione" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoCorrelazione.descrizione]]></fieldDescription>
+	</field>
+	<field name="partitaIva" class="java.lang.String">
+		<fieldDescription><![CDATA[partitaIva]]></fieldDescription>
+	</field>
+	<group name="SocietaGroup">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupFooter>
+			<band height="22"/>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="280" splitType="Stretch">
+			<textField>
+				<reportElement style="ReportTitle" mode="Transparent" x="0" y="82" width="396" height="20" uuid="87e2cfb4-7fd7-4df2-b72d-15822e7f01da"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="ReportTitleHeader" x="396" y="82" width="64" height="20" uuid="73035cc5-3d8a-43ec-8d28-920c257ad7f1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$R{lbl.data}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="ReportTitleHeader" x="36" y="102" width="529" height="15" isPrintWhenDetailOverflows="true" uuid="942079dc-e04a-4136-9cf1-1a3704667a20">
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{reportFilter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ReportTitleHeader" x="0" y="102" width="36" height="15" uuid="e8c4f4d4-75f3-489d-a4db-33669299ad1a">
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$R{lbl.filtri}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Heading1" x="0" y="119" width="224" height="15" uuid="47d3f46e-e490-4fcf-9528-84e51d1eba0a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.trovati}+":"+$P{recordFound}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="154" width="155" height="15" isPrintWhenDetailOverflows="true" uuid="5ab47cad-64ae-40d7-8407-1e10c79950e4"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.denominazioneInput}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="170" width="155" height="15" isPrintWhenDetailOverflows="true" uuid="afcae30b-c8d3-4831-9aaf-7aa744846401">
+					<printWhenExpression><![CDATA[new java.lang.Boolean($P{isGuestUser}).equals(java.lang.Boolean.FALSE)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.codfiscPivaInput}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="186" width="155" height="15" isPrintWhenDetailOverflows="true" uuid="c548eab8-5b25-46c9-a768-1ffd39c73385">
+					<printWhenExpression><![CDATA[new java.lang.Boolean($P{isGuestUser}).equals(java.lang.Boolean.FALSE)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.dataInput}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="222" width="115" height="21" isPrintWhenDetailOverflows="true" uuid="ec181bee-fead-474d-a40a-c89c51798e70"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.esito}+":"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="136" width="144" height="17" backcolor="#F0F0FB" uuid="8bf47e55-4ba7-406a-9dfa-ab593cd1475b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Parametri Ricerca]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="202" width="155" height="15" isPrintWhenDetailOverflows="true" uuid="3c88b743-74de-4a05-a2f2-0a5f1b11aa7c"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.utente}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement x="160" y="222" width="161" height="21" uuid="4b277a4f-2425-4248-96b2-d9ad6007bc8e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.lang.Boolean($P{esito})?"PARTE CORRELATA":"PARTE NON CORRELATA"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="160" y="186" width="161" height="15" isPrintWhenDetailOverflows="true" uuid="13484136-b74a-4cb2-9323-5d9ca7f6a9e5">
+					<printWhenExpression><![CDATA[new java.lang.Boolean($P{isGuestUser}).equals(java.lang.Boolean.FALSE)]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{dataInput}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="160" y="154" width="161" height="15" isPrintWhenDetailOverflows="true" uuid="abd31343-f87b-41bb-bd33-49bfd9f54fac"/>
+				<textFieldExpression><![CDATA[$P{denominazioneInput}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="160" y="170" width="161" height="15" isPrintWhenDetailOverflows="true" uuid="4c9a22e3-1fa9-470d-80e3-2eeb5152a294">
+					<printWhenExpression><![CDATA[new java.lang.Boolean($P{isGuestUser}).equals(java.lang.Boolean.FALSE)]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{codfiscPivaInput}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="160" y="202" width="161" height="15" isPrintWhenDetailOverflows="true" uuid="e4c11bb4-fa89-4ade-9189-8469aae2491b"/>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" x="0" y="247" width="565" height="21" isPrintWhenDetailOverflows="true" uuid="5cc96a29-ef81-4fbf-8769-261e9fff31fc">
+					<printWhenExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.FALSE)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.suggerimenti}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="-5" y="0" width="565" height="82" uuid="33b3b271-b67a-473e-a3e8-9b3c6ba59ca0"/>
+				<imageExpression><![CDATA["Immagine.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="460" y="82" width="100" height="20" uuid="5b5aa739-d429-4918-aef9-d4e9deb1dcd7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement style="ReportTitle" mode="Transparent" x="0" y="0" width="396" height="20" uuid="154c29fd-3a3f-464d-8903-ff0793c27e00">
+					<printWhenExpression><![CDATA[java.lang.Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="ReportTitleHeader" x="396" y="0" width="64" height="20" uuid="5fbe7192-fa17-44fd-ae86-998287a9f878"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$R{lbl.data}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="gridHeaderEsito" x="0" y="22" width="186" height="15" uuid="928a4082-3160-46f3-9293-2b8cf68ba141"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.denominazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="gridHeaderEsito" x="291" y="22" width="105" height="15" uuid="6bfc7078-f34f-4687-b970-87fcf8e5ef9a"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.pIva}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="gridHeaderEsito" x="396" y="22" width="164" height="15" uuid="1a0950dc-77e3-4c90-8d43-e783401625a0"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.tipoCorrelazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="gridHeaderEsito" x="186" y="22" width="105" height="15" uuid="ef16c94b-e51d-4242-89d0-22f1db883880"/>
+				<textFieldExpression><![CDATA[$R{lbl.pc.codfisc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="460" y="0" width="100" height="20" uuid="8bcdd436-6d4b-4fcf-91ff-516802a19e69"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="186" y="0" width="105" height="20" uuid="685adc80-1425-41b9-a1c0-8543d7b99e81"/>
+				<textFieldExpression><![CDATA[$F{codFiscale}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="186" height="20" uuid="6708b58a-8259-4d2c-8d06-fc25dca342d6"/>
+				<textFieldExpression><![CDATA[$F{denominazione}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="396" y="0" width="164" height="20" uuid="667965b3-ece8-4b2a-90a6-375b211a4d37"/>
+				<textFieldExpression><![CDATA[$F{tipoCorrelazione}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="291" y="0" width="105" height="20" uuid="ffdb5e63-d4b6-459f-8c9f-d3a34ddb0cb0"/>
+				<textFieldExpression><![CDATA[$F{partitaIva}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{printFooterPage}==Boolean.TRUE?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+			<textField>
+				<reportElement style="ReportTitleHeader" x="0" y="0" width="100" height="15" uuid="37dcd18c-e3e8-4a67-bfe8-bc2872e78089"/>
+				<textFieldExpression><![CDATA[$R{lbl.pagina}+":"+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ReportTitleFooter" x="396" y="0" width="169" height="15" uuid="f14b0311-82bb-4492-982d-f5347df0edb7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$R{lbl.utente}+":"+$P{user}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

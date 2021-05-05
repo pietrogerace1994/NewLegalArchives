@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="NewLegalArchives-Business/src/main/java"/>
+	<classpathentry kind="src" path="NewLegalArchives-Model/src/main/java"/>
+	<classpathentry kind="src" path="NewLegalArchives-Persistence/src/main/java"/>
+	<classpathentry kind="src" path="NewLegalArchives-Util/src/main/java"/>
+	<classpathentry kind="src" path="NewLegalArchives-Web/src/main/java"/>
+	<classpathentry kind="src" path="NewLegalArchives-Web/src/test/java"/>
+	<classpathentry kind="src" path="PortaleLegaliEsterni/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Hr/la-hr-boundary/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Hr/la-hr-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Hr/la-hr-service/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-file-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-file-senderservice/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-notaproposta-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-notaproposta-senderservice/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-schedavalutazione-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/la-schedavalutazione-senderservice/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/laws-fileactivator/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/laws-notapropostaactivator/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Lifecycle/laws-schedavalutazioneactivator/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/la-lucy1lu-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/la-lucy1lu-senderservice/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/la-lucystar-boundary/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/la-lucystar-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/la-lucystar-service/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/LucyStar/laws-lucy1luactivator/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Pec/la-tibcopec-boundary/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Pec/la-tibcopec-entity/src/main/java"/>
+	<classpathentry kind="src" path="Web Services/Pec/la-tibcopec-service/src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<!--<attribute name="owner.project.facets" value="java"/>-->
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

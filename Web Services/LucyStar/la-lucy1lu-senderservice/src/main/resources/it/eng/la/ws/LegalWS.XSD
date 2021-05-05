@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://webservices.servlet.web.snam.lucystar.idoq.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices.servlet.web.snam.lucystar.idoq.it/">
+
+<xs:element name="inserisciCorredoContabile" type="tns:inserisciCorredoContabile"/>
+
+<xs:element name="inserisciCorredoContabileResponse" type="tns:inserisciCorredoContabileResponse"/>
+
+<xs:complexType name="inserisciCorredoContabile">
+<xs:sequence>
+<xs:element name="arg0" type="tns:freeform" minOccurs="0"/>
+<xs:element name="arg1" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="freeform">
+<xs:sequence>
+<xs:element name="codefornerp" type="xs:string" minOccurs="0"/>
+<xs:element name="datadoc" type="xs:string" minOccurs="0"/>
+<xs:element name="numdoc" type="xs:string" minOccurs="0"/>
+<xs:element name="q1" type="tns:q1" minOccurs="0"/>
+<xs:element name="q3" type="tns:q3" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="q1">
+<xs:sequence>
+<xs:element name="item" type="tns:item" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="item">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="q3">
+<xs:sequence>
+<xs:element name="row" type="tns:row" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="row">
+<xs:sequence>
+<xs:element name="item" type="tns:item" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserisciCorredoContabileResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:risultato" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="risultato">
+<xs:sequence>
+<xs:element name="esito" type="xs:string" minOccurs="0"/>
+<xs:element name="messaggio" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

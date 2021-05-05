@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	  http://www.springframework.org/schema/context
+	  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	  http://www.springframework.org/schema/tx
+	  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	  http://www.springframework.org/schema/aop  
+	  http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+  	<aop:aspectj-autoproxy />
+	<!-- Definition for logging aspect -->
+	<bean id="logging" class="eng.la.util.LoggerLegalArchives" />
+	
+	<!-- ********************************* email service configuration ******************************* -->
+	<!--
+	<bean id="smtpSession" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/mail/Session"/>
+	</bean>
+	-->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host"><value>${mail.host}</value></property>
+        <property name="port"><value>${mail.port}</value></property>
+        <property name="protocol"><value>${mail.protocol}</value></property>
+        <property name="username"><value>${mail.username}</value></property>
+        <property name="password"><value>${mail.password}</value></property>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.quitwait">false</prop>
+            </props>
+        </property>	
+    </bean>
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	  <property name="velocityProperties">
+		 <value>
+		  resource.loader=class
+		  class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+		 </value>
+	  </property>
+	</bean>
+	<bean id="emailNotificationService" class="eng.la.business.mail.EmailNotificationServiceImpl">
+	  <property name="mailSender" ref="mailSender"/>
+	  <property name="velocityEngine" ref="velocityEngine"/>
+	</bean>
+
+</beans>

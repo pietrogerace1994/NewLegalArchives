@@ -1,0 +1,877 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="java.io.tmpdir" />
+
+	<!-- ANAGRAFICA STATI TIPI  
+	<cache name="anagraficaLeggiCategorieMailByLangCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiCategorieMailByParentCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>--> 
+	<cache name="anagraficaLeggiTipoAutorizzazioneCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoValutaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoValutaIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoPrestazioneNotarileLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoPrestazioneNotarileCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoPrestazioneNotarileIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoSoggettoIndagatoIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiStatiFascicoloCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoSoggettoIndagatoCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoSoggettoIndagatoLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	 
+
+	<cache name="anagraficaLeggiStatiWfCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiEsitoValutazioneProfCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiFascicoloByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache> 
+
+	<cache name="anagraficaLeggiStatiWfByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiEsitoValutazioneProfByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiIncaricoCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProformaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProessionistaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiAttoCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiIncaricoByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProformaByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProfessionistaByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiAttoByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiFascicoloByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiTipoCategoriaDocumentaleCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiTipoProfessionistaCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiTipoCategoriaDocumentaleLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiTipoProfessionistaLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiWfByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiEsitoValutazioneProfByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiStatiIncaricoByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProformaByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiProfessionistaByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiStatiAttoByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoContenziosoCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	 
+	<cache name="anagraficaLeggiClasseWfCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiGruppoUtenteCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+
+	<cache name="anagraficaLeggiTipoContenziosoByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoContenziosoByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	 
+	<cache name="anagraficaLeggiClasseWfByCodeCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="anagraficaLeggiGruppoUtenteByCodeCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoCorrelazioneCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoCorrelazioneByIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="anagraficaLeggiTipoCorrelazioneByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoCorrelazioneByCodeLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiValoreCausaByIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiValoreCausaByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoEntitaByLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiPosizioneSocietaBySettoreGiuridicoIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiTipoEntitaByIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiPosizioneSocietaByIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+
+	<cache name="anagraficaLeggiTipoEntitaCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiPosizioneSocietaCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="anagraficaLeggiValoreCausaCodiceLinguaCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+
+	<!-- CENTRO DI COSTO -->
+
+	<cache name="centroDiCostoLeggiByTFIdSGIdSIdULCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="centroDiCostoLeggiCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="centroDiCostoLeggiByIdCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="centroDiCostoCercaByTFIdSGIdSIdULCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="centroDiCostoCercaByTFIdSGIdSIdULPagCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="centroDiCostoContaByTFIdSGIdSIdULCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- GIUDIZIO -->
+
+	<cache name="giudizioLeggiCodiceLinguaCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="giudizioLeggiCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="giudizioLeggiByIdCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="giudizioLeggiByLinguaCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="giudizioLeggiDaSettoreGiuridicoIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+
+
+	<!-- MATERIA -->
+
+	<cache name="materiaLeggiCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="materiaLeggiMaterieChildrenCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaLeggiMaterieRootDaSettoreIdCache"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaLeggiDaSettoreIdCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaLeggiCodiceLinguaCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaLeggiCacheById" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaCercaByNomeCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaCercaByNomePagCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="materiaContaByNomeCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- NAZIONE -->
+
+	<cache name="nazioneCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="nazioneCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="nazioneCacheLeggiPerLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="nazioneCacheLeggiPerLinguaPartiCorrelate" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="nazioneCacheLeggiPerCodiceLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="nazioneCacheLeggiPerCodice"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- SPECIALIZZAZIONE -->
+
+	<cache name="specializzazioneCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="specializzazioneCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="specializzazioneCacheLeggiPerLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="specializzazioneCacheLeggiPerCodiceLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="specializzazioneCacheLeggiPerCodice"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- TIPO PROFESSIONISTA -->
+	<cache name="tipoProfessionistaCacheLeggiPerLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="tipoProfessionistaLeggiCacheById" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="tipoProfessionistaCacheLeggiPerCodiceLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<!-- STATO PROFESSIONISTA -->
+	<cache name="statoProfessionistaCacheLeggiPerLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="statoProfessionistaCacheLeggiPerCodiceLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<!-- STATO ESITO VALUTAZIONE PROFESSIONISTA -->
+	<cache name="statoEsitoValutazioneProfCacheLeggiPerLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="statoEsitoValutazioneProfCacheLeggiPerCodiceLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- RICORSO -->
+	<cache name="ricorsoLeggiCodiceLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="ricorsoLeggiLingua" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="ricorsoCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="ricorsoCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- SETTORE GIURIDICO -->
+
+	<cache name="settoreGiuridicoCacheConta" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheCercaPerNomePaginato"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheCercaPerNome"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheLeggiDaCodiceLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheLeggiDaTipologiaId"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="settoreGiuridicoCacheLeggiPerLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+
+	</cache>
+
+
+	<!-- SOCIETA -->
+
+	<cache name="societaCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="societaCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="societaCacheCerca" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="societaCacheCarcaPaginata" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="societaCacheConta" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- TIPOLOGIA FASCICOLO -->
+
+	<cache name="tipologiaFascicoloCacheLeggiDaId"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheLeggiPerLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheContaDaNome"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheCercaPerNome"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheCercaPerNomePaginata"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="tipologiaFascicoloCacheLeggiDaCodiceLingua"
+		maxEntriesLocalHeap="10000" maxEntriesLocalDisk="20000" eternal="false"
+		diskSpoolBufferSizeMB="20" timeToIdleSeconds="600" timeToLiveSeconds="1200"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<!-- VOCE DI CONTO -->
+
+	<cache name="voceDiContoCacheLeggiDaSettoreTipologiaUnitaLeg" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="voceDiContoCacheConta" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20" 
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="voceDiContoCacheCerca" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="voceDiContoCacheCercaPaginata" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="voceDiContoCacheLeggiDaId" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="voceDiContoCacheLeggi" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="20000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+
+
+</ehcache>

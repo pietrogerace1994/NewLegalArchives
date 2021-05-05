@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Referring Dossier ${newMessage.fascicoloRiferimento} - Request Pro-forma for Assignment ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">          
+          Request Pro-forma
+          <br>
+		  Please send the Pro-Forma relative to the file  ${newMessage.fascicoloRiferimento} by accessing the following link
+		  ${newMessage.linkAlDocumentoLegaliEsterni}<br>           
+          <br>
+          <hr>
+		  <br>
+		  Richiesta invio Proforma
+          <br>
+		  Si richiede l'invio del Proforma relativo al fascicolo ${newMessage.fascicoloRiferimento} accedendo al seguente link
+		  ${newMessage.linkAlDocumentoLegaliEsterni}<br>           
+          <br>
+        </td>        
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

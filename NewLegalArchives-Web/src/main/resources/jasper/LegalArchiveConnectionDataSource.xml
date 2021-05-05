@@ -1,0 +1,9 @@
+<?xml version="1.0"?><!-- iReport connections -->
+<iReportConnectionSet>
+	<iReportConnection name="ReportFactoryCollection_generateCollection" connectionClass="com.jaspersoft.ireport.designer.connection.JavaBeanDataSourceConnection">
+		<connectionParameter name="Type"><![CDATA[BEAN_COLLECTION]]></connectionParameter>
+		<connectionParameter name="MethodToCall"><![CDATA[generateCollection]]></connectionParameter>
+		<connectionParameter name="FactoryClass"><![CDATA[com.eni.icteam.legalarchives.controller.report.ReportFactoryCollection]]></connectionParameter>
+		<connectionParameter name="UseFieldDescription"><![CDATA[false]]></connectionParameter>
+	</iReportConnection>
+</iReportConnectionSet>

@@ -1,0 +1,24 @@
+Per poter compilare il progetto è necessario installare nel repository locale alcune dipendenze.
+Lanciare i seguenti comandi sostituendo prima il C:\Users\Francesco\Documents\Installazione Ambiente impostando il path corretto.
+I jar sono presenti sotto al progetto nella directory LIB_EXTERNAL
+
+
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\p8ciops\5.0.0\p8ciops-5.0.0.jar" -DgroupId=com.ibm.filenet -DartifactId=p8ciops -Dversion=5.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\wcm\5.0.0\wcm-5.0.0.jar" -DgroupId=com.ibm.filenet -DartifactId=wcm -Dversion=5.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\pe\5.0.0\pe-5.0.0.jar" -DgroupId=com.ibm.filenet -DartifactId=pe -Dversion=5.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\Jace\5.1.0\Jace-5.1.0.jar" -DgroupId=com.ibm.filenet -DartifactId=Jace -Dversion=5.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\stax-api\5.1.0\stax-api-5.1.0.jar" -DgroupId=com.ibm.filenet -DartifactId=stax-api -Dversion=5.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\xlxpScanner\5.1.0\xlxpScanner-5.1.0.jar" -DgroupId=com.ibm.filenet -DartifactId=xlxpScanner -Dversion=5.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ibm\filenet\xlxpScannerUtils\5.1.0\xlxpScannerUtils-5.1.0.jar" -DgroupId=com.ibm.filenet -DartifactId=xlxpScannerUtils -Dversion=5.1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\security-api-6.2.0.0.jar" -DgroupId=com.bea.core.weblogic.security -DartifactId=security-api -Dversion=6.2.0.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\weblogic-12.1.1.0.jar" -DgroupId=com.bea.core.weblogic -DartifactId=weblogic -Dversion=12.1.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\weblogic-security-6.2.0.0.jar" -DgroupId=com.bea.core.weblogic.security -DartifactId=weblogic-security -Dversion=6.2.0.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\org.glassfish.tyrus.tyrus-core-12.2.1-0-0.jar" -DgroupId=com.oracle.weblogic -DartifactId=org.glassfish.tyrus.tyrus-core -Dversion=12.2.1-0-0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\org.glassfish.tyrus.tyrus-container-glassfish-cdi-12.2.1-0-0.jar" -DgroupId=com.oracle.weblogic -DartifactId=org.glassfish.tyrus.tyrus-container-glassfish-cdi -Dversion=12.2.1-0-0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\org.glassfish.tyrus.tyrus-server-12.2.1-0-0.jar" -DgroupId=com.oracle.weblogic -DartifactId=org.glassfish.tyrus.tyrus-server -Dversion=12.2.1-0-0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\org.glassfish.tyrus.tyrus-spi-12.2.1-0-0.jar" -DgroupId=com.oracle.weblogic -DartifactId=org.glassfish.tyrus.tyrus-spi -Dversion=12.2.1-0-0 -Dpackaging=jar
+
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\ojdbc6-11.2.0.jar" -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\LEGAL_EXT\LIB_EXTERNAL\com.springsource.com.oreilly.servlet-0.0.0.BUILD-20021105.jar" -DgroupId=com.oreilly.servlet -DartifactId=com.springsource.com.oreilly.servlet -Dversion=0.0.0.BUILD-20021105 -Dpackaging=jar

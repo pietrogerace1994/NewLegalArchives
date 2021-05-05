@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="New style" isDefault="false"/>
+    <style name="borderLine" isDefault="false" mode="Opaque" hAlign="Left" vAlign="Top" lineSpacing="Single" >
+		<pen lineWidth="0.5" lineStyle="Solid" lineColor="#999999"/>
+	</style>
+	<style name="gridHeader" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#8BAE8B" fill="Solid" lineSpacing="Single" markup="none" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10" >
+		<pen lineWidth="0.5" lineStyle="Solid" lineColor="#999999"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+			<topPen lineWidth="0.5" lineColor="#999999"/>
+			<leftPen lineWidth="0.5" lineColor="#999999"/>
+			<bottomPen lineWidth="0.5" lineColor="#999999"/>
+			<rightPen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="gridBody" isDefault="false" mode="Opaque" forecolor="#000000" backcolor="#E5E6C7" fill="Solid" lineSpacing="Single" pattern="" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10" >
+		<pen lineWidth="0.5" lineStyle="Solid" lineColor="#999999"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+			<topPen lineWidth="0.5" lineColor="#999999"/>
+			<leftPen lineWidth="0.5" lineColor="#999999"/>
+			<bottomPen lineWidth="0.5" lineColor="#999999"/>
+			<rightPen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="gridBodyWithoutBorder" isDefault="false" mode="Opaque" forecolor="#999999" backcolor="#E5E6C7" fill="Solid" lineSpacing="Single" pattern="" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10" >
+
+	</style>
+	<style name="gridBodySubLevel1" isDefault="false" mode="Opaque" forecolor="#999999" backcolor="#FFFFFF" fill="Solid" lineSpacing="Single" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10" >
+		<pen lineWidth="0.5" lineColor="#999999"/>
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="gridHeaderSubLevel1" isDefault="false" mode="Opaque" forecolor="#000000" backcolor="#F0F0D9" fill="Solid" lineSpacing="Single" markup="none" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10">
+		<pen lineWidth="0.5" lineStyle="Solid" lineColor="#999999"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+			<topPen lineWidth="0.5" lineColor="#999999"/>
+			<leftPen lineWidth="0.5" lineColor="#999999"/>
+			<bottomPen lineWidth="0.5" lineColor="#999999"/>
+			<rightPen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="gridHeaderSubLevel2" isDefault="false" mode="Opaque" forecolor="#999999" backcolor="#FFE6E6" fill="Solid" lineSpacing="Single" markup="none" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10">
+		<pen lineWidth="0.5" lineStyle="Solid" lineColor="#999999"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#999999"/>
+			<topPen lineWidth="0.5" lineColor="#999999"/>
+			<leftPen lineWidth="0.5" lineColor="#999999"/>
+			<bottomPen lineWidth="0.5" lineColor="#999999"/>
+			<rightPen lineWidth="0.5" lineColor="#999999"/>
+		</box>
+	</style>
+	<style name="gridHeaderSubLevel2WithoutBorder" isDefault="false" mode="Opaque" forecolor="#999999" backcolor="#FFE6E6" fill="Solid" lineSpacing="Single" markup="none" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10">
+	</style>    
+    <style name="gridHeaderSubLevel1WithoutBorder" isDefault="false" mode="Opaque" forecolor="#999999" backcolor="#F0F0D9" fill="Solid" lineSpacing="Single" markup="none" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" fontName="SansSerif" fontSize="10">
+    </style> 
+	<style name="ReportTitle" isDefault="false" fontSize="15" isBold="true" isItalic="true"/>
+	<style name="ReportTitleHeader" isDefault="false" fontSize="8" isBold="false" isItalic="false"/>
+	<style name="ReportTitleFooter" isDefault="false" fontSize="8" isBold="false" isItalic="false"/>
+    <style name="Heading1" isDefault="false" fontName="SansSerif" fontSize="10" isBold="false" isItalic="false"/>
+    <style name="Body1" isDefault="false" fontName="SansSerif" fontSize="10" isBold="false" isItalic="false"/>
+</jasperTemplate>

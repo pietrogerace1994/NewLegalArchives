@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="NewLegalArchives-Ear:ear exploded">
+    <output-path>$PROJECT_DIR$/NewLegalArchives-Ear/target/NewLegalArchives</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>NewLegalArchives-Ear</module>
+        <packaging>ear</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="NewLegalArchives-Ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/NewLegalArchives-Ear/target/NewLegalArchives/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="archive" name="NewLegalArchives.war">
+        <element id="artifact" artifact-name="NewLegalArchives-Web:war exploded" />
+      </element>
+      <element id="library" level="project" name="Maven: javax.jms:javax.jms-api:2.0.1" />
+      <element id="library" level="project" name="Maven: ned-dds-interface:ned-dds-interface:4.7.7" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,66 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Beauty Contest Authorization ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px; font-size: 12px;">
+        	Dear Counsel, 
+        	<br>
+        	<br>
+        	following the anticipated by telephone and thank you for your kind availability,
+        	<br>
+        	We point out again that the commitment of an assignment for the task described in the SoW below 
+			will be the subject of a beauty contest between several Law Firms:
+        	<br>
+			<br>
+        	${newMessage.nomeDocumento} - ${newMessage.bcSow}
+        	<br>
+        	${newMessage.linkAlDocumentoLegaliEsterni}
+        	<br>
+			<br>
+        	Therefore, we would be grateful if you could provide us with a proposal as soon as possible, through the Portal of External Counsels, 
+			regarding the task in question, including technical and economic offer for the performance of the assignment.
+        	<br>
+			<br>
+        	We remain available for any doubt or clarification
+        	<br>
+			<br>
+			<br>
+        	Best Regards
+        	<br>
+        	<hr>
+			<br>
+			Egr. Avv., 
+        	<br>
+        	<br>
+        	facendo seguito a quanto anticipato telefonicamente e ringraziandoLA per la cortese disponibilit&agrave;,
+        	<br>
+        	Le precisiamo nuovamente che l'affidamento di un incarico per l'attivit&agrave; descritta nello SoW di seguito 
+        	sar&agrave; oggetto di un beauty contest tra diversi Studi Legali:
+        	<br>
+			<br>
+        	${newMessage.nomeDocumento} - ${newMessage.bcSow}
+        	<br>
+        	${newMessage.linkAlDocumentoLegaliEsterni}
+        	<br>
+			<br>
+        	Pertanto, Le saremmo grati se potesse fornirci quanto prima una proposta, tramite il Portale dei Legali Esterni, 
+        	relativamente all'attivit&agrave; in oggetto, comprensiva di offerta tecnica nonch&eacute; economica per lo svolgimento dell'incarico.
+        	<br>
+			<br>
+        	Restiamo a disposizione per qualsiasi dubbio o chiarimento
+        	<br>
+			<br>
+			<br>
+        	Cordiali Saluti
+        	<br>
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

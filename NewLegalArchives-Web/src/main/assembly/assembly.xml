@@ -1,0 +1,30 @@
+<assembly>
+	<id>library</id>
+	<!-- Generates a zip package containing the needed files -->
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<!-- Adds dependencies to zip package under lib directory -->
+
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>false</useProjectArtifact>
+			<outputDirectory>lib</outputDirectory>
+			<unpack>false</unpack>
+			<scope>provided</scope>
+			<excludes>
+				<exclude>com.bea.core.weblogic.security:weblogic-security</exclude>
+				<exclude>com.bea.core.weblogic:security-api</exclude> 
+				<exclude>com.bea.core.weblogic:weblogic</exclude> 
+				
+				<exclude>com.oracle.weblogic:org.glassfish.tyrus.tyrus-core</exclude> 
+				<exclude>com.oracle.weblogic:org.glassfish.tyrus.tyrus-container-glassfish-cdi</exclude> 
+				<exclude>com.oracle.weblogic:org.glassfish.tyrus.tyrus-server</exclude> 
+				<exclude>com.oracle.weblogic:org.glassfish.tyrus.tyrus-spi</exclude> 
+				 
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+
+</assembly>

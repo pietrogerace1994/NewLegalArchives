@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body style="margin:0; text-align:center; font-family: sans-serif; ">
+        
+        <table style="width:100%; min-width:359px; margin:0; ">
+            <tr style=" background-color:#FDC109; width:100%;">
+                   <td style="padding:5px 15px; padding-bottom:20px;"><h1 style="font-size: 16px; font-weight: bold; text-align:center;">$newsletter.titolo</h1></td>
+      </tr>
+             #if(${newsletter.newestTitle})
+            <tr style="text-align:left; background-color:#FDC109; width:100%;">
+                <td style="padding:5px 15px; text-align:center;"><span ><img src="../portal-news/portal/img/hightlights.png" style="margin-top: -20px;margin-bottom: 12px;"></span>
+                    <h3 style="font-size: 18px; font-weight: bold; margin-top:0px; text-align:center;">HIGHLIGHTS</h3>
+                    <h5 style="font-size: 18px; font-weight: bold; margin-top:0px; text-align:left; margin-bottom:10px;">$!newsletter.newestTitle</h5>
+                    <p style="font-size: 14px; text-align:left; margin-top:0px; margin-bottom:10px; padding-bottom:20px;">$!newsletter.newestAbstract</p>
+        </td>
+      </tr>
+            #end
+	  #set( $i = 0 )
+	  #foreach( $categoria in $newsletter.categorie )
+	   #set( $i = $i + 1 )
+            <tr style="text-align:left; background-color:#$categoria.coloreCategoria; width:100%;">
+                <td style="padding:5px 15px; text-align:center;"><span ><img src="../portal-news/portal/img/$categoria.icon" style="margin-top:-26px;"></span>
+                    <h3 style="font-size:18px; font-weight:bold; color:#ffffff; margin-top:0px; text-align:center; text-transform:uppercase;">$categoria.categoria</h3>
+					</td>
+				</tr>
+            
+				#set( $j = 0 )
+  				#foreach( $comunicazione in $categoria.comunicazioni )
+	  			 #set( $j = $j + 1 )
+            <tr style="text-align:left; background-color:#ffffff; width:100%;">
+                <td style="padding:5px 15px; text-align:left;">
+                    <h4 style="font-size: 18px; font-weight: bold;  color:#$categoria.coloreCategoria; margin-top:0px;  margin-bottom:10px; text-align:left; text-transform:uppercase;">$!comunicazione.sottoCategoria</h4>
+                    <h5 style="font-size: 18px; font-weight: bold; margin-top:0px; text-align:left; margin-bottom:10px;">$comunicazione.titolo</h5>
+                    <p style="font-size: 14px; text-align:left; margin-top:0px; margin-bottom:10px; padding-bottom:20px; 
+                    #if ($j != $categoria.comunicazioni.size())    
+                    border-bottom:1px solid 
+                    #end
+                    #$categoria.coloreCategoria;">$comunicazione.abstractCont<br>
+                        <a href="$newsletter.urlArticolo$comunicazione.id" style="font-size: 14px; text-align:left; margin-top:0px; margin-bottom:10px; text-decoration:underline; color:#$categoria.coloreCategoria; cursor: pointer;">Continua ></a>
+                    </p>
+				
+					</td>
+				</tr>
+				#end
+            #end
+			</table>
+
+
+    </body>
+  </html>

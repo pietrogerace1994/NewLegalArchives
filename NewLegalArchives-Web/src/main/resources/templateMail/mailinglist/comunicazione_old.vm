@@ -1,0 +1,65 @@
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Newsletter</td>
+      </tr>
+ <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+         <h1>Newsletter $newsletter.numeroRomano - $newsletter.anno</h1>
+		 <h2> $newsletter.titolo</h2>
+        </td>
+      </tr>
+      <tr>
+      <td>
+      <img  src="$newsletter.urlCopertina" width="100%" border="0"/>
+      </td>
+      </tr>
+	  
+	  <!-- CICLO GLI ELEMENTI -->
+	  
+	  #set( $i = 0 )
+	  #foreach( $categoria in $newsletter.categorie )
+		
+	   #set( $i = $i + 1 )
+	   <tr>
+         <td style="padding-left: 15px; padding-right: 15px; background-color: #$categoria.coloreCategoria ;">
+            <table style="font-family: verdana, arial, helvetica; font-size: 14px; background-color: #$categoria.coloreCategoria ;" width="100%" border="0" >
+				<tr>
+					<td>
+						<h3><b>$categoria.categoria</b></h3>
+					</td>
+				</tr>
+				#set( $j = 0 )
+  				#foreach( $comunicazione in $categoria.comunicazioni )
+		
+	  			 #set( $j = $j + 1 )
+				
+				<tr>
+					<td>
+						<b>Data: </b> $comunicazione.data
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Titolo: </b>$comunicazione.titolo
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Abstract: </b> $comunicazione.abstractCont
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-bottom: 15px;">
+						<i><a href="$baseUrlLegalArchives/articolo/view.action?id=$comunicazione.id">leggi tutto</a></i> 
+					</td>
+				</tr>
+				#end
+			</table>
+			<br>
+         </td> 
+       </tr>
+	  #end 
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>

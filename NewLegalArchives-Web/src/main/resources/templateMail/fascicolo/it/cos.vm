@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+        		#foreach($item in $newMessage.listaFascioliCambioOwner)
+        		<tr height="20">
+        			<td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Cambio Owner Fascicolo ${item.nome} </td>
+      			</tr>
+        		<tr>
+        			<td style="padding-left: 15px; padding-right: 15px">
+          			E' stato effettuato il cambio owner per il fascicolo ${item.nome}<br>
+          			Owner precedente: ${newMessage.vecchioOwner}<br>
+          			Nuovo Owner:  ${newMessage.nuovoOwner}
+        			</td>
+        		</tr>
+        		#end
+		<tr height="20">
+        	<td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      	</tr>
+    </table>
+  </body>
+</html>

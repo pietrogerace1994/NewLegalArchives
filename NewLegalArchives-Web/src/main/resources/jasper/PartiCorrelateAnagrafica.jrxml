@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PartiCorrelateAnagrafica" printOrder="Horizontal" pageWidth="2200" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="2170" leftMargin="15" rightMargin="15" topMargin="15" bottomMargin="15" resourceBundle="jasper.reporti18n" whenResourceMissingType="Key" isIgnorePagination="true" uuid="736f0733-0dae-443d-89ab-70513acbfd27">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="eng.la.util.report.*"/>
+	<template><![CDATA[$P{STYLE_DIR} + "LegalArchivesStyles.jrtx"]]></template>
+	<style name="gridHeaderEsito">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.TRUE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#00447B" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.FALSE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB7100" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\LegalArchives\\LegalArchives-backend-java\\LegalArchives-report\\src\\main\\jasperreports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="language" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Codice Lingua  ex "it" "en" etc.]]></parameterDescription>
+		<defaultValueExpression><![CDATA["it"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="user" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Utente di stampa]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Utente Stampa..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="STYLE_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\LegalArchives\\LegalArchives-backend-java\\LegalArchives-report\\src\\main\\resources\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\LegalArchives\\LegalArchives-backend-java\\LegalArchives-report\\src\\main\\resources\\jasper\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="recordFound" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Record Trovati]]></parameterDescription>
+		<defaultValueExpression><![CDATA["1..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportFilter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Report Filter..."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="country" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["IT"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printFooterPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Piè di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printHeaderPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Testata di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="expandedFormat" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTitle" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Titolo del report]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Report"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="denominazioneInput" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="codfiscPivaInput" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[codice fiscale o p. iva in input]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataInput" class="java.util.Date" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="esito" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[esito della ricerca]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isGuestUser" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[isGuestUser]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="denominazione" class="java.lang.String">
+		<fieldDescription><![CDATA[denominazione]]></fieldDescription>
+	</field>
+	<field name="codFiscale" class="java.lang.String">
+		<fieldDescription><![CDATA[codFiscale]]></fieldDescription>
+	</field>
+	<field name="rapporto" class="java.lang.String">
+		<fieldDescription><![CDATA[rapporto]]></fieldDescription>
+	</field>
+	<field name="tipoCorrelazione" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoCorrelazione.descrizione]]></fieldDescription>
+	</field>
+	<field name="nazione" class="java.lang.String">
+		<fieldDescription><![CDATA[nazione.descrizione]]></fieldDescription>
+	</field>
+	<field name="familiare" class="java.lang.String">
+		<fieldDescription><![CDATA[familiare]]></fieldDescription>
+	</field>
+	<field name="consiglieriSindaci" class="java.lang.String">
+		<fieldDescription><![CDATA[consiglieriSindaci]]></fieldDescription>
+	</field>
+	<field name="dataInserimento" class="java.util.Date">
+		<fieldDescription><![CDATA[dataInserimento]]></fieldDescription>
+	</field>
+	<field name="dataCancellazione" class="java.util.Date">
+		<fieldDescription><![CDATA[dataCancellazione]]></fieldDescription>
+	</field>
+	<field name="partitaIva" class="java.lang.String">
+		<fieldDescription><![CDATA[partitaIva]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="0" y="85" width="424" height="15" backcolor="#D7DCE4" uuid="79497f9e-60fd-44ce-9bda-46549ce2368b">
+					<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.denominazione}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="ReportTitle" isPrintRepeatedValues="false" mode="Transparent" x="0" y="0" width="396" height="20" uuid="01b4ce4d-26a4-4a63-8b69-cc0a30c53f7d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy">
+				<reportElement isPrintRepeatedValues="false" x="396" y="0" width="74" height="20" uuid="966d91a7-be7f-442c-bc00-530f69fe69db"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.data}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="ReportTitleHeader" isPrintRepeatedValues="false" x="36" y="21" width="529" height="15" isPrintWhenDetailOverflows="true" uuid="78496ce6-de41-4a69-8590-d07dfdb1e519">
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{reportFilter}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="ReportTitleHeader" isPrintRepeatedValues="false" x="0" y="21" width="36" height="15" uuid="260f1f6e-4a6b-473d-afd3-3bfefefdca2f">
+					<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$R{lbl.filtri}+":"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Heading1" isPrintRepeatedValues="false" x="0" y="37" width="250" height="15" uuid="94eef9e2-6464-4406-a628-4dcb44e3b22d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.trovati}+":"+$P{recordFound}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="53" width="150" height="15" isPrintWhenDetailOverflows="true" uuid="0a98bb71-656a-49bb-ab9e-c27334bca968"/>
+				<textFieldExpression><![CDATA[$R{lbl.utente}+":"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement style="Heading1" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="150" y="53" width="100" height="15" isPrintWhenDetailOverflows="true" uuid="e2be593f-6b06-4c11-9a7a-495c1c43a313"/>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="543" y="85" width="150" height="15" backcolor="#D7DCE4" uuid="587090ff-ef22-479d-8936-72a1d3017359"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.pIva}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="693" y="85" width="100" height="15" backcolor="#D7DCE4" uuid="f45b24fa-76e0-4ac7-bc14-c729f10b341a"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.stato}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="793" y="85" width="150" height="15" backcolor="#D7DCE4" uuid="c26b5ca1-6121-4444-894d-114ebbc3a40e"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.tipoCorrelazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="943" y="85" width="400" height="15" backcolor="#D7DCE4" uuid="fef901c5-3642-4150-8663-fdf75fde3a70">
+					<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+				</reportElement>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.rapporto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="1343" y="85" width="120" height="15" backcolor="#D7DCE4" uuid="f48bf71a-bb15-489f-9ca0-e66a63078d2c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.familiare}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="1463" y="85" width="250" height="15" backcolor="#D7DCE4" uuid="fb64012e-d0fd-46f9-a7df-49b88964d67f"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.consiglieriSindaci}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="1713" y="85" width="200" height="15" backcolor="#D7DCE4" uuid="8b696fc0-27b8-4a38-bd76-a63d85f21b20"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.nazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="1913" y="85" width="100" height="15" backcolor="#D7DCE4" uuid="13804707-d134-4081-afe8-3355f73eaa8b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.dataCreazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="2013" y="85" width="100" height="15" backcolor="#D7DCE4" uuid="e58b78d8-07d7-4655-aaef-f83a08d32159"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.dataFineValidita}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement style="gridHeaderEsito" isPrintRepeatedValues="false" mode="Opaque" x="424" y="85" width="119" height="15" backcolor="#D7DCE4" uuid="01da62ac-9434-4d48-be6f-69796963a707"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{lbl.pc.codfisc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="470" y="1" width="100" height="19" uuid="0d21e5cd-a484-45a1-b719-50b7c0dd30d4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="543" y="0" width="150" height="15" uuid="2511a72d-7737-47e8-b680-09297c26c21f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{partitaIva}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="424" height="15" isPrintWhenDetailOverflows="true" uuid="09050232-57d6-4a6f-bc3e-10f4bbab22d7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{denominazione}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="693" y="0" width="100" height="15" uuid="0b8faf27-7e39-4dfd-be52-2f3b856ca99a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataCancellazione}==null?$R{lbl.pc.statoAttiva}:$R{lbl.pc.statoNoAttiva}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="793" y="0" width="150" height="15" uuid="5475f4f3-523d-4935-9f00-29edce7898b8"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoCorrelazione}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="943" y="0" width="400" height="15" isPrintWhenDetailOverflows="true" uuid="525562fb-b596-45a6-9487-798ee026718c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rapporto}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1343" y="0" width="120" height="15" uuid="a3647a51-78de-4910-b4d6-dd8f60be3352"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{familiare}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1463" y="0" width="250" height="15" uuid="a603b9bf-db1e-492a-b2ad-3836a58531b5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{consiglieriSindaci}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1713" y="0" width="200" height="15" uuid="57831730-8556-486a-8bd5-cbbab877330c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nazione}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1913" y="0" width="100" height="15" uuid="5b9a9c6c-a7f5-4ad0-b3b5-d822dbbfe983"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataInserimento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="2013" y="0" width="100" height="15" uuid="fde13fc4-837b-4ae5-a46d-44968b609402"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataCancellazione}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="424" y="0" width="119" height="15" uuid="03ae0472-5e38-4c74-b1dc-23b1b8eaf172"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codFiscale}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

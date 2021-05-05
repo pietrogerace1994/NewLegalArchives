@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Act change request</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+          An authorization has been requested for change in Act this Pec email:<br>
+          Requesting user is: ${newMessage.utenteRichiedente}<br>
+          Sender is: ${newMessage.mittentePec}<br>
+          Recipient is: ${newMessage.destinatarioPec}<br>
+          Object is: ${newMessage.oggettoPec}
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

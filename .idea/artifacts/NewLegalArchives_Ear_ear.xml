@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="NewLegalArchives-Ear:ear">
+    <output-path>$PROJECT_DIR$/NewLegalArchives-Ear/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>NewLegalArchives-Ear</module>
+        <packaging>ear</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="NewLegalArchives.ear">
+      <element id="artifact" artifact-name="NewLegalArchives-Ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

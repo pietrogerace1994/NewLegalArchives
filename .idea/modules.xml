@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Business/NewLegalArchives-Business.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Business/NewLegalArchives-Business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Ear/NewLegalArchives-Ear.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Ear/NewLegalArchives-Ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Model/NewLegalArchives-Model.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Model/NewLegalArchives-Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Persistence/NewLegalArchives-Persistence.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Persistence/NewLegalArchives-Persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Util/NewLegalArchives-Util.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Util/NewLegalArchives-Util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchives-Web/NewLegalArchives-Web.iml" filepath="$PROJECT_DIR$/NewLegalArchives-Web/NewLegalArchives-Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewLegalArchivesPrj.iml" filepath="$PROJECT_DIR$/NewLegalArchivesPrj.iml" />
+    </modules>
+  </component>
+</project>

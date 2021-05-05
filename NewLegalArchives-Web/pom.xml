@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- <scm>
+		<url>https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-1.0.4/LEGAL_ARCHIVES_2016</url>
+		<connection>scm:svn:https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-1.0.5/tags/NewLegalArchivesPrj-1.0.4/trunk</connection>
+		<developerConnection>scm:svn:https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-1.0.5/tags/NewLegalArchivesPrj-1.0.4/trunk</developerConnection>
+	</scm> -->
+
+	<properties>
+		<war.name>NewLegalArchives</war.name>
+		<jdk.version>1.8</jdk.version>
+	</properties>
+
+
+	<parent>
+		<artifactId>NewLegalArchivesPrj</artifactId>
+		<groupId>eng.la</groupId>
+		<version>2.4.2</version>
+	</parent>
+
+	<artifactId>NewLegalArchives-Web</artifactId>
+	<packaging>war</packaging>
+	<name>NewLegalArchives-Web</name>
+
+	<dependencies>
+
+		<!-- ENG DEPENDENCY -->
+		<dependency>
+			<groupId>eng.la</groupId>
+			<artifactId>NewLegalArchives-Util</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eng.la</groupId>
+			<artifactId>NewLegalArchives-Business</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eng.la</groupId>
+			<artifactId>NewLegalArchives-Model</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<profiles>
+		<profile>
+			<id>locale</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<finalName>${war.name}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>${jdk.version}</source>
+							<target>${jdk.version}</target>
+							<showWarnings>true</showWarnings>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<version>2.1.1</version>
+						<configuration>
+							<archive>
+								<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								</manifest>
+								<manifestEntries>
+									<Implementation-Build>${buildNumber}</Implementation-Build>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/config.properties" />
+										<delete file="${project.build.outputDirectory}/log4j.properties" />
+										<copy file="${basedir}/src/main/resources/config-locale.properties" tofile="${project.build.outputDirectory}/config.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="config-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/resources/log4j-locale.properties" tofile="${project.build.outputDirectory}/log4j.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="log4j-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/webapp/portal/js/config-locale.js" tofile="${basedir}/target/NewLegalArchives/portal/js/config.js" />
+										<delete>
+											<fileset dir="${basedir}/target/NewLegalArchives/portal/js/" includes="config-*.js" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<descriptor>src/main/assembly/assembly.xml</descriptor>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archive</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12.4</version>
+						<configuration>
+							<includes>
+								<include>**/LATestSuite.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.3</version>
+						<configuration>
+							<warName>NewLegalArchives</warName>
+							<outputDirectory>C:\webogic_12_1_3\user_projects\domains\base_domain\autodeploy</outputDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+
+
+			</build>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<build>
+				<finalName>${war.name}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>${jdk.version}</source>
+							<target>${jdk.version}</target>
+							<showWarnings>true</showWarnings>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<version>2.1.1</version>
+						<configuration>
+							<archive>
+								<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								</manifest>
+								<manifestEntries>
+									<Implementation-Build>${buildNumber}</Implementation-Build>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/config.properties" />
+										<delete file="${project.build.outputDirectory}/log4j.properties" />
+										<copy file="${basedir}/src/main/resources/config-test.properties" tofile="${project.build.outputDirectory}/config.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="config-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/resources/log4j-test.properties" tofile="${project.build.outputDirectory}/log4j.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="log4j-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/webapp/portal/js/config-test.js" tofile="${basedir}/target/NewLegalArchives/portal/js/config.js" />
+										<delete>
+											<fileset dir="${basedir}/target/NewLegalArchives/portal/js/" includes="config-*.js" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<descriptor>src/main/assembly/assembly.xml</descriptor>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archive</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12.4</version>
+						<configuration>
+							<includes>
+								<include>**/LATestSuite.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>sviluppo</id>
+			<build>
+				<finalName>${war.name}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>${jdk.version}</source>
+							<target>${jdk.version}</target>
+							<showWarnings>true</showWarnings>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<version>2.1.1</version>
+						<configuration>
+							<archive>
+								<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								</manifest>
+								<manifestEntries>
+									<Implementation-Build>${buildNumber}</Implementation-Build>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/config.properties" />
+										<delete file="${project.build.outputDirectory}/log4j.properties" />
+										<copy file="${basedir}/src/main/resources/config-sviluppo.properties" tofile="${project.build.outputDirectory}/config.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="config-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/resources/log4j-sviluppo.properties" tofile="${project.build.outputDirectory}/log4j.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="log4j-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/webapp/portal/js/config-sviluppo.js" tofile="${basedir}/target/NewLegalArchives/portal/js/config.js" />
+										<delete>
+											<fileset dir="${basedir}/target/NewLegalArchives/portal/js/" includes="config-*.js" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<descriptor>src/main/assembly/assembly.xml</descriptor>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archive</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12.4</version>
+						<configuration>
+							<includes>
+								<include>**/LATestSuite.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>collaudo</id>
+			<build>
+				<finalName>${war.name}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>${jdk.version}</source>
+							<target>${jdk.version}</target>
+							<showWarnings>true</showWarnings>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<version>2.1.1</version>
+						<configuration>
+							<archive>
+								<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								</manifest>
+								<manifestEntries>
+									<Implementation-Build>${buildNumber}</Implementation-Build>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/config.properties" />
+										<delete file="${project.build.outputDirectory}/log4j.properties" />
+										<copy file="${basedir}/src/main/resources/config-collaudo.properties" tofile="${project.build.outputDirectory}/config.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="config-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/resources/log4j-collaudo.properties" tofile="${project.build.outputDirectory}/log4j.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="log4j-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/webapp/portal/js/config-collaudo.js" tofile="${basedir}/target/NewLegalArchives/portal/js/config.js" />
+										<delete>
+											<fileset dir="${basedir}/target/NewLegalArchives/portal/js/" includes="config-*.js" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<descriptor>src/main/assembly/assembly.xml</descriptor>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archive</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12.4</version>
+						<configuration>
+							<includes>
+								<include>**/LATestSuite.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release- plugin</artifactId>
+						<version>2.4.1</version>
+						<configuration>
+							<tagNameFormat>v@{project.version}</tagNameFormat>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>produzione</id>
+			<build>
+				<finalName>${war.name}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>${jdk.version}</source>
+							<target>${jdk.version}</target>
+							<showWarnings>true</showWarnings>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<groupId>org.apache.maven.plugins</groupId>
+						<version>2.1.1</version>
+						<configuration>
+							<archive>
+								<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+								</manifest>
+								<manifestEntries>
+									<Implementation-Build>${buildNumber}</Implementation-Build>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${project.build.outputDirectory}/config.properties" />
+										<delete file="${project.build.outputDirectory}/log4j.properties" />
+										<copy file="${basedir}/src/main/resources/config-produzione.properties" tofile="${project.build.outputDirectory}/config.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="config-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/resources/log4j-produzione.properties" tofile="${project.build.outputDirectory}/log4j.properties" />
+										<delete>
+											<fileset dir="${project.build.outputDirectory}/" includes="log4j-*.properties" />
+										</delete>
+										<copy file="${basedir}/src/main/webapp/portal/js/config-produzione.js" tofile="${basedir}/target/NewLegalArchives/portal/js/config.js" />
+										<delete>
+											<fileset dir="${basedir}/target/NewLegalArchives/portal/js/" includes="config-*.js" />
+										</delete>
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.5.3</version>
+						<configuration>
+							<descriptor>src/main/assembly/assembly.xml</descriptor>
+						</configuration>
+						<executions>
+							<execution>
+								<id>create-archive</id>
+								<phase>package</phase>
+								<goals>
+									<goal>single</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.12.4</version>
+						<configuration>
+							<includes>
+								<include>**/LATestSuite.java</include>
+							</includes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<project name="fixSequenceNameModel" default="fixAll">
+
+	<property name="src"
+		value="${basedir}/src/main/java/eng/la/model/" />
+
+	<target name="fixGenerationType">
+		<replace dir="${src}" value="GenerationType.AUTO">
+			<include name="*.java" />
+			<replacetoken>GenerationType.SEQUENCE</replacetoken>
+		</replace>
+
+		<echo message="GenerationType.SEQUENCE TO GenerationType.AUTO FIXED" />
+	</target>
+	
+
+	<target name="fixTimestampType">
+		<replace dir="${src}" value="TemporalType.TIMESTAMP">
+			<include name="*.java" />
+			<replacetoken>TemporalType.DATE</replacetoken>
+		</replace>
+
+		<echo message="TemporalType.DATE TO TemporalType.TIMESTAMP FIXED" />
+	</target>
+	
+
+	<target name="fixSequenceName">
+		<replace dir="${src}" value="PROF_EST_WF_SEQ">
+			<include name="*.java" />
+			<replacetoken>PROFESSIONISTA_ESTERNO_WF_SEQ</replacetoken>
+		</replace>
+
+		<echo message="PROFESSIONISTA_ESTERNO_WF_SEQ FIXED" />
+		
+		
+		<replace dir="${src}" value="CONF_STEP_WF_SEQ">
+			<include name="*.java" />
+			<replacetoken>CONFIGURAZIONE_STEP_WF_SEQ</replacetoken>
+		</replace>
+
+		<echo message="CONFIGURAZIONE_STEP_WF_SEQ FIXED" />
+		
+		 
+		<replace dir="${src}" value="R_FASC_GIUD_ORGANO_SEQ">
+			<include name="*.java" />
+			<replacetoken>R_FASCICOLO_GIUDIZIO_ORGANO_SEQ</replacetoken>
+		</replace>
+
+		<echo message="R_FASCICOLO_GIUDIZIO_ORGANO_SEQ FIXED" />
+		
+		 
+		<replace dir="${src}" value="R_FASC_RIC_ORGANO_SEQ">
+			<include name="*.java" />
+			<replacetoken>R_FASCICOLO_RICORSO_ORGANO_SEQ</replacetoken>
+		</replace>
+
+		<echo message="R_FASCICOLO_RICORSO_ORGANO_SEQ FIXED" />
+		 
+		 
+		<replace dir="${src}" value="RIC_PARTE_CORRELATA_SEQ">
+			<include name="*.java" />
+			<replacetoken>RICERCA_PARTE_CORRELATA_SEQ</replacetoken>
+		</replace>
+
+		<echo message="RICERCA_PARTE_CORRELATA_SEQ FIXED" />
+		
+		 
+		<replace dir="${src}" value="R_INC_PROF_SOC_SEQ">
+			<include name="*.java" />
+			<replacetoken>R_INCARICO_PROFORMA_SOCIETA_SEQ</replacetoken>
+		</replace>
+
+		<echo message="R_INCARICO_PROFORMA_SOCIETA_SEQ FIXED" />
+		
+		  
+		<replace dir="${src}" value="RISCHIO_SOCCOMBENZA_SEQ">
+			<include name="*.java" />
+			<replacetoken>RISCHIO_SOCCOMBENZA_PFR_SEQ</replacetoken>
+		</replace>
+
+		<echo message="RISCHIO_SOCCOMBENZA_PFR_SEQ FIXED" />
+		
+	</target>
+
+	<target name="fixAll">
+		<echo message="BaseDir Model: ${basedir}" />
+		<antcall target="fixGenerationType"></antcall>
+		<antcall target="fixTimestampType"></antcall>
+		<antcall target="fixSequenceName"></antcall>
+	</target>
+</project>

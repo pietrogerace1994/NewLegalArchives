@@ -1,0 +1,63 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Fascicolo di riferimento ${newMessage.fascicoloRiferimento} - Richiesta emissione fattura ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">          
+          Fase 3 di 3: richiesta emissione fattura
+          <br>
+		  E' stato autorizzato il pagamento del proforma ${newMessage.nomeDocumento} relativa al fascicolo ${newMessage.fascicoloRiferimento}
+		   accedendo al seguente link ${newMessage.linkAlDocumentoLegaliEsterni}
+		  <br>           
+		  <br>           
+          <br>
+          Di seguito gli estremi:<br>
+          <br>
+          <ul>
+            <li>Studio legale esterno: ${newMessage.studioLegale}</li>  
+            <li>Importo: ${newMessage.totaleAutorizzato}</li>
+            <li>Societ&agrave; di addebito: ${newMessage.societaAddebito}</li>
+          </ul>
+		  <br>
+		  Elenco Societ&agrave;
+		  <ul>
+			  <li>Snam S.p.A. - P.Iva : 13271390158</li>
+			  <li>Snam Rete Gas S.p.A. - P.Iva : 10238291008</li>
+			  <li>Stogit S.p.A. - P.Iva : 13271380159</li>
+			  <li>Gnl Italia S.p.A. - P.Iva: 03231010962</li>
+		  </ul>
+		  <br>
+		  Nel caso in cui il documento trasmesso dal Vs. Studio per autorizzazione sia quello definitivo, si prega di non tener conto di questa comunicazione.
+          <hr>
+          <br>
+		  Step 3 of 3: invoicing request
+		  <br>	
+          Payment for ${newMessage.nomeDocumento} of file ${newMessage.linkFascicoloRiferimento} has been authorized.<br>
+          <br>
+          Below details:<br>
+          <br>
+          <ul>
+            <li>Outside law firm: ${newMessage.studioLegale}</li>
+            <li>Amount: ${newMessage.totaleAutorizzato}</li>
+            <li>Company charged: ${newMessage.societaAddebito}</li>
+          </ul>
+		  <br>
+            Companies List
+		  <ul>
+			  <li>Snam S.p.A. - VAT Reg No: 13271390158</li>
+			  <li>Snam Rete Gas S.p.A. - VAT Reg No: 10238291008</li>
+			  <li>Stogit S.p.A. - VAT Reg No: 13271380159</li>
+			  <li>Gnl Italia S.p.A. - VAT Reg No: 03231010962</li>
+		  </ul>
+		  <br>		  
+		  In the case the document, submitted for approval by your study, is the definitive one, please disregard this communication.
+        </td>
+      </tr>
+      <tr height="20"> 
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

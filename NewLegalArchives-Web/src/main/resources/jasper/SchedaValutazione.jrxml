@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LetteraIncarico" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="15" bottomMargin="15" whenResourceMissingType="Key" uuid="82ebeff6-7773-416a-8725-d8bfa47ccef6">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="617"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.background.image.properties" value="true,true,1.0,15,20,0,0,565,76"/>
+	<style name="gridHeaderEsito">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.TRUE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#00447B" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new java.lang.Boolean($P{esito}).equals(java.lang.Boolean.FALSE)]]></conditionExpression>
+			<style mode="Opaque" forecolor="#FFFFFF" backcolor="#EB7100" fill="Solid" fontSize="10" isItalic="false" isUnderline="false" isStrikeThrough="false">
+				<pen lineWidth="0.5" lineColor="#999999"/>
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="1927d3a0-5709-4eb8-9b30-84b3800c471b"/>
+	<subDataset name="Table Dataset 1" uuid="a4f37132-b8de-48e7-bf6d-608462b9156d"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\LegalArchives\\LegalArchives-backend-java\\LegalArchives-report\\src\\main\\jasperreports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="language" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[Codice Lingua  ex "it" "en" etc.]]></parameterDescription>
+		<defaultValueExpression><![CDATA["it"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="STYLE_DIR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="IMAGE_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Giordano\\Desktop\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="country" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["IT"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printFooterPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Piè di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="printHeaderPage" class="java.lang.Boolean" isForPrompting="false">
+		<parameterDescription><![CDATA[Indica  se stampare Testata di pagina]]></parameterDescription>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="expandedFormat" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataInput" class="java.util.Date" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="1" class="java.lang.String"/>
+	<parameter name="2" class="java.lang.String"/>
+	<parameter name="3" class="java.lang.String"/>
+	<parameter name="4" class="java.lang.String"/>
+	<parameter name="5" class="java.lang.String"/>
+	<parameter name="6" class="java.lang.String"/>
+	<parameter name="7" class="java.lang.String"/>
+	<parameter name="8" class="java.lang.String"/>
+	<parameter name="9" class="java.lang.String"/>
+	<parameter name="10" class="java.lang.String"/>
+	<parameter name="11" class="java.lang.String"/>
+	<parameter name="12" class="java.lang.String"/>
+	<parameter name="12due" class="java.lang.String"/>
+	<parameter name="12tre" class="java.lang.String"/>
+	<parameter name="12quattro" class="java.lang.String"/>
+	<parameter name="12cinque" class="java.lang.String"/>
+	<parameter name="12sei" class="java.lang.String"/>
+	<parameter name="12sette" class="java.lang.String"/>
+	<parameter name="13" class="java.lang.String"/>
+	<parameter name="14" class="java.lang.String"/>
+	<parameter name="15" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="SocietaGroup">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="693">
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="34" width="351" height="16" isRemoveLineWhenBlank="true" uuid="411ef941-a009-4cf1-b8b7-121ba47c805b"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="0" width="495" height="20" isRemoveLineWhenBlank="true" uuid="e4d788b2-d64f-4d36-be6e-bf978b840fcc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[SCHEDA DI VALUTAZIONE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="34" width="130" height="16" isRemoveLineWhenBlank="true" uuid="bfd47c4b-8128-4141-be03-80feb54ee02d"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Pratica/Controparte]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="58" width="130" height="16" isRemoveLineWhenBlank="true" uuid="1747eb2c-54ff-42b3-be02-a1f8f04d036f"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Autorità]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="58" width="351" height="16" isRemoveLineWhenBlank="true" uuid="a47eff0c-09c5-4919-a6b9-953f89efc52a"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="53" width="495" height="5" isRemoveLineWhenBlank="true" uuid="608133a0-3789-4443-9975-9cbccabcffa1"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="77" width="495" height="5" isRemoveLineWhenBlank="true" uuid="4db22d01-dec0-4bb6-99c5-1f23223a99e3"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="222" width="379" height="13" isRemoveLineWhenBlank="true" uuid="0623815f-116d-4fb9-8b72-93ec62e4e182"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Ho verificato che la parcella si riferisce solo ad attività oggetto della lettera d'incarico : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="383" width="183" height="22" isRemoveLineWhenBlank="true" uuid="58920780-0228-4cad-acf2-ba0bc77e03b6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[DESCRIZIONE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="255" y="383" width="214" height="22" isRemoveLineWhenBlank="true" uuid="acd442ff-d537-40c1-b35b-6d4d3fa7f52f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[VALORE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="405" width="45" height="22" isRemoveLineWhenBlank="true" uuid="9776edc0-1f0b-4b5c-84c8-f91fca8e065c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10"/>
+					</textElement>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="427" width="45" height="22" isRemoveLineWhenBlank="true" uuid="eb8b162d-bfc1-4cd2-b63c-7868b93e206b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="449" width="45" height="22" isRemoveLineWhenBlank="true" uuid="68f6ee2f-f1d7-4d59-b8d3-ab849615a2a7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="471" width="45" height="22" isRemoveLineWhenBlank="true" uuid="1022feb1-de1b-4d91-ba79-1681a86dbbd0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="493" width="45" height="22" isRemoveLineWhenBlank="true" uuid="b6b39ea0-1de1-46e8-9087-e8ef1dbc27ee"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="405" width="183" height="22" isRemoveLineWhenBlank="true" uuid="74da6280-210f-4ef7-8103-d55488b69684"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Diritti]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="427" width="183" height="22" isRemoveLineWhenBlank="true" uuid="31722377-33f5-4a27-bb34-fe390339a5cf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Onorari]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="405" width="214" height="22" isRemoveLineWhenBlank="true" uuid="9048a1d0-9ec8-4f74-b6da-cb93fd1bf117"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="427" width="214" height="22" isRemoveLineWhenBlank="true" uuid="15afaf0e-1fc7-481d-8ce4-1c19fd2d598d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12due}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="102" width="495" height="5" isRemoveLineWhenBlank="true" uuid="78299ab2-1340-4e19-bc19-57a815907fac"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="82" width="130" height="16" isRemoveLineWhenBlank="true" uuid="08ffc3e8-abbc-490f-bd4c-7457645896c8"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Valore della controversia]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="82" width="351" height="16" isRemoveLineWhenBlank="true" uuid="95125641-cffb-44fd-a024-58afefd86e97"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{3}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="152" width="495" height="5" isRemoveLineWhenBlank="true" uuid="39bd5dfc-6780-47d4-b62c-6fc494220ccd"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="132" width="351" height="16" isRemoveLineWhenBlank="true" uuid="ab807cec-dc47-4d07-adce-4b4005d7b1d1"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{5}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="132" width="130" height="16" isRemoveLineWhenBlank="true" uuid="bf5c72c2-5a4b-49a4-b9c4-4e9096973e25"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Parcella N°]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="176" width="495" height="5" isRemoveLineWhenBlank="true" uuid="7c1ab418-778a-489a-99cb-a4d6f501ff96"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="156" width="130" height="16" isRemoveLineWhenBlank="true" uuid="39d09648-de52-49de-a0a2-0cf40484dca5"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Data emissione]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="156" width="351" height="16" isRemoveLineWhenBlank="true" uuid="b4af0c4f-8c13-4f88-a90e-900ea3c5d619"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{6}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="180" width="130" height="16" isRemoveLineWhenBlank="true" uuid="d82251f4-702e-4630-b719-31a197806298"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Avvocato/Studio Legale]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="180" width="351" height="16" isRemoveLineWhenBlank="true" uuid="d5ebcb3b-6a7e-4aa8-be65-f004e0c485ab"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{7}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="200" width="495" height="5" isRemoveLineWhenBlank="true" uuid="465ea156-7ff3-4e9a-8627-f7fcffe1c3a3"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="379" y="222" width="79" height="13" isRemoveLineWhenBlank="true" uuid="c669935d-4a42-4c06-b4eb-76ed727ac3ce"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{8}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="246" width="228" height="14" isRemoveLineWhenBlank="true" uuid="9b0e7c32-f9ae-413f-8279-e5e1a3eebe9b"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Ho verificato che la parcella è congrua rispetto a: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="24" y="270" width="134" height="13" isRemoveLineWhenBlank="true" uuid="d8dd44cb-ea1f-4bcf-b7ba-daaa3f61a6e3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[la lettera d'incarico]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="24" y="283" width="134" height="21" isRemoveLineWhenBlank="true" uuid="ba5ddadb-7ae9-46c2-9826-a7fc6d55e431"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[le tabelle parametri forensi ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="24" y="304" width="134" height="14" isRemoveLineWhenBlank="true" uuid="d3256395-312a-4365-865b-f7d565492772"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[la legge ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="159" y="270" width="69" height="13" isRemoveLineWhenBlank="true" uuid="51fca791-ecf8-474d-918e-bf423ff613f6"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="159" y="283" width="69" height="21" isRemoveLineWhenBlank="true" uuid="ca5d41d8-3a47-4d8e-bd4a-38f8924ea10a"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="159" y="304" width="69" height="14" isRemoveLineWhenBlank="true" uuid="cc5e559c-3a10-4996-9528-d285b3db90dd"/>
+					<textElement verticalAlignment="Middle" markup="html">
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{11}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="515" width="45" height="22" isRemoveLineWhenBlank="true" uuid="a33bb226-2c88-4965-9b37-6b9491e0c7bd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[6]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="26" y="537" width="45" height="22" isRemoveLineWhenBlank="true" uuid="f1a32482-6f13-437f-8d82-007665224c51"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[7]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="449" width="183" height="22" isRemoveLineWhenBlank="true" uuid="0520369c-a9df-4766-8a56-5abd68e723f7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Spese imponibili]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="471" width="183" height="22" isRemoveLineWhenBlank="true" uuid="875f5cf4-5c87-42bf-8319-514332185340"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[CPA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="493" width="183" height="22" isRemoveLineWhenBlank="true" uuid="4f80d792-2d5b-4e5e-b55a-87d863c8c1e1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Totale imponibile]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="515" width="183" height="22" isRemoveLineWhenBlank="true" uuid="00aeefce-b2fd-4ddf-a0f8-22398bd7703b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Spese non imponibili]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="71" y="537" width="183" height="22" isRemoveLineWhenBlank="true" uuid="e3ecf503-38d1-4bdd-a9cf-ee455c3a020e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[Totale (IVA esclusa)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="449" width="214" height="22" isRemoveLineWhenBlank="true" uuid="b9f57998-a355-40dc-aaf4-5d9eb65944f3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12tre}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="471" width="214" height="22" isRemoveLineWhenBlank="true" uuid="69ad8ef5-7147-4d5c-95e1-b49880202831"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12quattro}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="493" width="214" height="22" isRemoveLineWhenBlank="true" uuid="7fa890eb-6934-4fba-a5b4-92026eea5397"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12cinque}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="515" width="214" height="22" isRemoveLineWhenBlank="true" uuid="21c02e0b-9e71-4aee-b7ea-7829620591b5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12sei}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="255" y="537" width="214" height="22" isRemoveLineWhenBlank="true" uuid="80ea0a7d-f5e3-4cca-b786-cd39b68f8510"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{12sette}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="1" y="352" width="495" height="20" isRemoveLineWhenBlank="true" uuid="c0aa542c-c5d7-4338-9a87-b8fc977ac0bd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[ANALITICO PRESTAZIONI (ONORARI)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="574" width="495" height="20" isRemoveLineWhenBlank="true" uuid="8f715a90-5522-44ea-bdfe-1f870389b532"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Note]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="0" y="594" width="495" height="19" isRemoveLineWhenBlank="true" uuid="6a358f3e-7b57-4682-a8ce-5dd8b97790d5"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{13}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="623" width="496" height="5" isRemoveLineWhenBlank="true" uuid="3a1ca1d7-2568-4fa6-adf8-ea224c7dc230"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="638" width="61" height="18" isRemoveLineWhenBlank="true" uuid="3474a008-95f2-4f87-9911-9a876d300ea0"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Data]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" x="1" y="668" width="200" height="18" isRemoveLineWhenBlank="true" uuid="32d5112b-d645-402b-8cda-e3b784c146ff"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Unità Legale - Owner del fascicolo]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="61" y="638" width="167" height="18" isRemoveLineWhenBlank="true" uuid="ba2ca546-7857-4af7-ac1c-680584fa1a61"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{14}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="200" y="668" width="296" height="18" isRemoveLineWhenBlank="true" uuid="18d6495b-49f7-419d-8df0-bd5c5cf964fe"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{15}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="127" width="495" height="5" isRemoveLineWhenBlank="true" uuid="6de3c9bb-0c1c-4da4-af8d-4c8dd2efe506"/>
+					<textElement markup="none">
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Transparent" x="144" y="107" width="351" height="16" isRemoveLineWhenBlank="true" uuid="89d04816-81c2-4631-8af0-5a59b633baef"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{4}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="0" y="107" width="130" height="16" isRemoveLineWhenBlank="true" uuid="5fb9a2a4-d2e0-444a-9b73-efe62255b6b7"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Valore dell'incarico]]></text>
+				</staticText>
+				<line>
+					<reportElement positionType="Float" x="469" y="383" width="1" height="177" uuid="6bcb012a-c05a-4475-84ea-f18b5a97237b"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="25" y="383" width="1" height="176" uuid="dcaf0342-e186-49c2-952b-694fa10afd03"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="383" width="443" height="1" uuid="42c89e89-a395-4ae1-9969-34028caa1115"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="25" y="559" width="445" height="1" uuid="128080d8-f143-4a24-9fbc-15847b5eea53"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="254" y="384" width="1" height="175" uuid="a794a071-0800-4da7-bcad-69ea2f1ddedd"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="71" y="384" width="1" height="175" uuid="25db436d-1f7d-4632-8626-8a77b3d71fa7"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="448" width="444" height="1" uuid="986297b5-efdf-4371-8fa1-5e87c327af09"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="426" width="444" height="1" uuid="31ebe9e9-63a6-414a-89e1-1ef24f6aca4e"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="25" y="404" width="444" height="1" uuid="83e35844-b4c9-443e-a9b2-6c5ea4b562d6"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="470" width="444" height="1" uuid="93112da0-40f4-4cd3-ae9b-c7767485529c"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="492" width="444" height="1" uuid="699e53a3-89fd-490d-aea1-57e0bbe882ca"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="514" width="444" height="1" uuid="c0771f64-e877-430a-a9cc-1a9d71a36d6c"/>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="26" y="536" width="444" height="1" uuid="72cfe23c-ff1c-45a4-a60e-15af0c83fbc3"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{printFooterPage}==Boolean.TRUE?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+			<textField>
+				<reportElement x="208" y="5" width="46" height="15" uuid="37dcd18c-e3e8-4a67-bfe8-bc2872e78089"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina : " + $V{PAGE_NUMBER} + " di "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="251" y="5" width="32" height="15" uuid="5444940f-b60d-4f66-987d-4418fd5abb9a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <table style="font-family: verdana, arial, helvetica; font-size: 14px; border: solid 3px #9BA580;" width="100%" border="0" height="180">
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal - Referring Dossier ${newMessage.fascicoloRiferimento} - Richiesta pagamento proforma ${newMessage.nomeDocumento}</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 15px; padding-right: 15px">
+          Step 3 of 3: authorization received, proceed with the payment<br>
+          <br>
+          Payment for ${newMessage.linkAlDocumento} of file ${newMessage.linkFascicoloRiferimento} has been requested.<br>
+          <br>
+          <strong>${newMessage.tipoAllegatoEn}</strong><br>
+		  <ul>
+		    <li>Amount for charged company:<p>
+             <ul>
+                <li>${newMessage.societaAddebito} - ${newMessage.totaleAutorizzato}</li>
+              </ul>
+            </li>
+          </ul>
+          <hr>
+          Fase 3 di 3: autorizzazione ricevuta, procedere con il pagamento<br>
+          <br>
+          E' stato richiesto il pagamento della proforma ${newMessage.linkAlDocumento} relativa al fascicolo ${newMessage.linkFascicoloRiferimento}<br>
+          <br>
+          <strong>${newMessage.tipoAllegatoIt}</strong><br>
+		  <ul>
+		     <li>Importo a carico della societ&agrave;:<p>
+               <ul>
+                <li>${newMessage.societaAddebito} - ${newMessage.totaleAutorizzato}</li>
+              </ul>
+              </li>
+			</ul>
+        </td>
+      </tr>
+      <tr height="20">
+        <td style="background-color: #86AE8A; color: #FFFFFF; text-align: center; font-size: 16px;">Legal</td>
+      </tr>
+    </table>
+  </body>
+</html>

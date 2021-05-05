@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:tns="http://xmlns.example.com/1467032449466" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://webservices.servlet.web.snam.lucystar.idoq.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.example.com/1467032449466">
+    <wsdl:types>
+        <xs:schema xmlns:tns="http://webservices.servlet.web.snam.lucystar.idoq.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices.servlet.web.snam.lucystar.idoq.it/" version="1.0" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+            <xs:complexType name="freeform">
+                <xs:sequence>
+                    <xs:element name="codefornerp" type="xs:string" minOccurs="0"/>
+                    <xs:element name="datadoc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="numdoc" type="xs:string" minOccurs="0"/>
+                    <xs:element name="q1" type="tns:q1" minOccurs="0"/>
+                    <xs:element name="q3" type="tns:q3" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="inserisciCorredoContabile">
+                <xs:sequence>
+                    <xs:element name="arg0" type="tns:freeform" minOccurs="0"/>
+                    <xs:element name="arg1" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+                    <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="inserisciCorredoContabileResponse">
+                <xs:sequence>
+                    <xs:element name="return" type="tns:risultato" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="item">
+                <xs:sequence>
+                    <xs:element name="nome" type="xs:string" minOccurs="0"/>
+                    <xs:element name="value" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="q1">
+                <xs:sequence>
+                    <xs:element name="item" nillable="true" type="tns:item" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="q3">
+                <xs:sequence>
+                    <xs:element name="row" nillable="true" type="tns:row" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="risultato">
+                <xs:sequence>
+                    <xs:element name="esito" type="xs:string" minOccurs="0"/>
+                    <xs:element name="messaggio" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="row">
+                <xs:sequence>
+                    <xs:element name="item" nillable="true" type="tns:item" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="inserisciCorredoContabile" type="tns:inserisciCorredoContabile"/>
+            <xs:element name="inserisciCorredoContabileResponse" type="tns:inserisciCorredoContabileResponse"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="inserisciCorredoContabile">
+        <wsdl:port name="LegalWSEndpoint1" binding="tns:LegalWSEndpoint1Binding">
+            <soap:address location="http://localhost:10282/inserisciCorredoContabile"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="LegalWS">
+        <wsdl:operation name="inserisciCorredoContabile">
+            <wsdl:input message="tns:inserisciCorredoContabile"/>
+            <wsdl:output message="tns:inserisciCorredoContabileResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="LegalWSEndpoint1Binding" type="tns:LegalWS">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="inserisciCorredoContabile">
+            <soap:operation style="document" soapAction="&quot;&quot;" soapActionRequired="true"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="inserisciCorredoContabile">
+        <wsdl:part name="parameters" element="ns0:inserisciCorredoContabile"/>
+    </wsdl:message>
+    <wsdl:message name="inserisciCorredoContabileResponse">
+        <wsdl:part name="parameters" element="ns0:inserisciCorredoContabileResponse"/>
+    </wsdl:message>
+</wsdl:definitions>

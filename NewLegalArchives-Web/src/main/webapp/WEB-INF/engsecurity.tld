@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>engsecurity</short-name>
+  <uri></uri>
+  <display-name>engsecurity</display-name>
+    <tag>
+    <name>token</name>
+    <tag-class>eng.la.util.va.csrf.TokenSecurityTagHandler</tag-class>
+    <body-content>JSP</body-content>
+    <attribute>
+      <name>regenerate</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.Boolean</type>      
+    </attribute>
+    <attribute>
+      <name>input</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.Boolean</type>      
+    </attribute>
+  </tag>
+</taglib>

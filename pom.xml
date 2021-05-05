@@ -1,0 +1,555 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<scm>
+		<url>https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-2.2.0</url>
+		<connection>scm:svn:https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-2.2.0</connection>
+		<developerConnection>scm:svn:https://svn.snamretegas.priv/svn/snam/Trasversali/LEGAL_ARCHIVES_2016/tags/NewLegalArchivesPrj-2.2.0</developerConnection>
+	</scm>
+
+	<properties>
+		<springframework.version>3.2.17.RELEASE</springframework.version>
+		<jdk.version>1.8</jdk.version>
+		<commons.io.version>2.4</commons.io.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
+		<filenetce.version>5.1.0</filenetce.version>
+		<filenetpe.version>5.0.0</filenetpe.version>
+		<jackson.version>1.9.13</jackson.version>
+		<quartz.version>1.8.6</quartz.version>
+	</properties> 
+
+	<repositories>
+	  <repository>
+	    <id>maven.oracle.com</id>
+	    <releases>
+	      <enabled>true</enabled>
+	    </releases>
+	    <snapshots>
+	      <enabled>false</enabled>
+	    </snapshots>
+	    <url>https://maven.oracle.com</url>
+	    <layout>default</layout>
+	  </repository>
+	</repositories>
+	<pluginRepositories>
+	  <pluginRepository>
+	    <id>maven.oracle.com</id>
+	    <url>https://maven.oracle.com</url>
+	  </pluginRepository>
+	</pluginRepositories>
+
+	<groupId>eng.la</groupId>
+	<artifactId>NewLegalArchivesPrj</artifactId>
+	<version>2.4.2</version>
+	<packaging>pom</packaging>
+	<name>NewLegalArchivesPrj</name>
+	<description>New Legal Archives Project</description>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>javax.jms-api</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<!-- WEBSOCKET -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+		    <artifactId>org.glassfish.tyrus.tyrus-core</artifactId> 
+		    <version>12.2.1-0-0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+		    <artifactId>org.glassfish.tyrus.tyrus-container-glassfish-cdi</artifactId> 
+		    <version>12.2.1-0-0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+		    <artifactId>org.glassfish.tyrus.tyrus-server</artifactId> 
+		    <version>12.2.1-0-0</version>
+			<scope>provided</scope>
+		</dependency> 
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+		    <artifactId>org.glassfish.tyrus.tyrus-spi</artifactId> 
+		    <version>12.2.1-0-0</version>
+			<scope>provided</scope>
+    	</dependency>
+		<!-- 
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-server</artifactId>
+			<version>1.11</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>tyrus-client</artifactId>
+					<groupId>org.glassfish.tyrus</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+-->
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-container-grizzly-server</artifactId>
+			<version>1.11</version>
+			<scope>provided</scope>
+		</dependency>
+ 	
+		<!-- AXIS -->
+		<!-- https://mvnrepository.com/artifact/commons-discovery/commons-discovery -->
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.4</version>
+			<scope>provided</scope>
+		</dependency> 
+		<!-- https://mvnrepository.com/artifact/javax.xml.soap/saaj-api -->
+		<dependency>
+			<groupId>javax.xml.soap</groupId>
+			<artifactId>saaj-api</artifactId>
+			<version>1.3.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/wsdl4j/wsdl4j -->
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+			<version>1.5.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.axis/axis -->
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.xml.rpc/javax.xml.rpc-api -->
+		<dependency>
+			<groupId>javax.xml.rpc</groupId>
+			<artifactId>javax.xml.rpc-api</artifactId>
+			<version>1.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- DEPENDENCY SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-oxm -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.11</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.11</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20151123</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- OTHER DEPENDENCY -->
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.9.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.13</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.io.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons.lang.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.3.Final</version>
+			<scope>provided</scope>
+		</dependency>
+ 
+
+
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>p8ciops</artifactId>
+			<version>${filenetpe.version}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>wcm</artifactId>
+			<version>${filenetpe.version}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>pe</artifactId>
+			<version>${filenetpe.version}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>Jace</artifactId>
+			<version>${filenetce.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>stax-api</artifactId>
+			<version>${filenetce.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>xlxpScanner</artifactId>
+			<version>${filenetce.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>xlxpScannerUtils</artifactId>
+			<version>${filenetce.version}</version>
+			<scope>provided</scope>
+		</dependency>-->
+
+		<!-- DEPENDENCY PROVIDED -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+        	<groupId>org.apache.poi</groupId>
+	        <artifactId>poi-ooxml</artifactId>
+	        <version>3.9</version>
+	        <scope>provided</scope>
+    	</dependency>
+
+		            <!-- engsecurity VA https://mvnrepository.com/artifact/com.oreilly.servlet/com.springsource.com.oreilly.servlet -->
+            <dependency>
+                 <groupId>com.oreilly.servlet</groupId>
+                 <artifactId>com.springsource.com.oreilly.servlet</artifactId>
+                 <version>0.0.0.BUILD-20021105</version>
+                 <scope>provided</scope>
+             </dependency>
+
+
+
+
+		<!-- DEPENDENCY JAPSERREPORT -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- DEPENDENCY FOR TEST -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+			<scope>test</scope>
+		</dependency-->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.6.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity-tools -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+			<scope>provided</scope>
+		</dependency> 
+
+		<dependency>
+			<groupId>com.bea.core.weblogic.security</groupId>
+			<artifactId>weblogic-security</artifactId>
+			<version>6.2.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.bea.core.weblogic.security</groupId>
+			<artifactId>security-api</artifactId>
+			<version>6.2.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.bea.core.weblogic</groupId>
+			<artifactId>weblogic</artifactId>
+			<version>12.1.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- DEPENDENCY COMPILE -->
+		
+		<!-- usato da Oracle Returing -->
+<!-- 		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+			<scope>compile</scope>
+		</dependency> -->
+		
+ 		<!-- QUARTZ -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+			<scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>ned-dds-interface</groupId>
+			<artifactId>ned-dds-interface</artifactId>
+			<version>4.7.7</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+	<modules>
+		<module>NewLegalArchives-Business</module>
+		<module>NewLegalArchives-Ear</module>
+		<module>NewLegalArchives-Model</module>
+		<module>NewLegalArchives-Persistence</module>
+		<module>NewLegalArchives-Util</module>
+		<module>NewLegalArchives-Web</module>
+	</modules>
+</project>

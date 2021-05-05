@@ -1,0 +1,106 @@
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ 	xmlns:aop="http://www.springframework.org/schema/aop"
+ 	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+                           http://www.directwebremoting.org/schema/spring-dwr  
+             http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd ">
+             
+             
+	<bean id="UtenteJobServiceImpl" class="eng.la.business.UtenteJobServiceImpl" />
+
+ 	<bean id="aggiornaUtenteJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="UtenteJobServiceImpl" />
+		<property name="targetMethod" value="aggiornaUtenteRuolo" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+
+	<!--Viene eseguito ogni giorno alle 18-->
+	<bean id="aggiornaUtenteTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="aggiornaUtenteJob" />
+		<property name="cronExpression" value="0 0 18 * * ?" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+	
+	<bean id="invioProtocolliJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="UtenteJobServiceImpl" />
+		<property name="targetMethod" value="inviaMailProtocollo" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+	
+		<!--Viene eseguito ogni giorno alle 08-->
+	<bean id="invioProtocolliTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="invioProtocolliJob" />
+		<property name="cronExpression" value="0 0 23 * * ?" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="autoStartup" value="true"/>
+		<property name="triggers">
+	    <list>
+			<ref bean="aggiornaUtenteTrigger" />
+			<ref bean="invioProtocolliTrigger" />
+	    </list>
+		</property>
+   	</bean>
+   
+   	<bean id="NotificaWebMailServiceImpl" class="eng.la.business.NotificaWebMailServiceImpl" />
+
+   	<bean id="notificheWebMail"
+   		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="NotificaWebMailServiceImpl" />
+		<property name="targetMethod" value="inviaNotificheWebMail" />
+		<aop:scoped-proxy proxy-target-class="true" />
+   	</bean>
+
+	<!--Viene eseguito alle 8am di ogni inizio mese-->
+	<bean id="notificheWebTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="notificheWebMail" />
+		<property name="cronExpression" value="0 0 8 1 * ?" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+		    <list>
+			<ref bean="notificheWebTrigger" />
+		    </list>
+		</property>
+   </bean>
+   
+   
+   <!--<bean id="SchedaFondoRischiServiceImpl" class="eng.la.business.SchedaFondoRischiServiceImpl" />
+
+ 	<bean id="calcolaPfrJob"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="SchedaFondoRischiServiceImpl" />
+		<property name="targetMethod" value="calcolaPfr" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean> -->
+
+	<!--Viene eseguito ogni trimestre il primo giorno del mese (01/01, 01/04, 01/07, 01/10) alle 08:00 -->
+	<!--<bean id="calcolaPfrTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="calcolaPfrJob" />
+		<property name="cronExpression" value="0 0 8 1 1/3 ?" />
+		<aop:scoped-proxy proxy-target-class="true" />
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="autoStartup" value="true"/>
+		<property name="triggers">
+	    <list>
+			<ref bean="calcolaPfrTrigger" />
+	    </list>
+		</property>
+   </bean>-->
+   
+	
+   	
+ </beans>

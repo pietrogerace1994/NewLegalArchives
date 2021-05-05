@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NewLegalArchives-Web:war">
+    <output-path>$PROJECT_DIR$/NewLegalArchives-Web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>NewLegalArchives-Web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="NewLegalArchives.war">
+      <element id="artifact" artifact-name="NewLegalArchives-Web:war exploded" />
+    </root>
+  </artifact>
+</component>

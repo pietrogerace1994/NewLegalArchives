@@ -1,0 +1,39 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="NewLegalArchives-Web:war exploded">
+    <output-path>$PROJECT_DIR$/NewLegalArchives-Web/target/NewLegalArchives</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>NewLegalArchives-Web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="NewLegalArchives-Web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="NewLegalArchives-Util-2.4.2.jar">
+            <element id="module-output" name="NewLegalArchives-Util" />
+          </element>
+          <element id="archive" name="NewLegalArchives-Business-2.4.2.jar">
+            <element id="module-output" name="NewLegalArchives-Business" />
+          </element>
+          <element id="archive" name="NewLegalArchives-Persistence-2.4.2.jar">
+            <element id="module-output" name="NewLegalArchives-Persistence" />
+          </element>
+          <element id="archive" name="NewLegalArchives-Model-2.4.2.jar">
+            <element id="module-output" name="NewLegalArchives-Model" />
+          </element>
+          <element id="library" level="project" name="Maven: javax.jms:javax.jms-api:2.0.1" />
+          <element id="library" level="project" name="Maven: ned-dds-interface:ned-dds-interface:4.7.7" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/NewLegalArchives-Web/target/NewLegalArchives/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="NewLegalArchives-Web/web/Web" />
+    </root>
+  </artifact>
+</component>
