@@ -120,6 +120,7 @@ public class DocumentaleDdsCryptDAOImpl implements DocumentaleDdsCryptDAO {
         content.setContentsMimeType(mimeTypeDocumento);
 
         Document document = DocumentBuilder.buildDocument(proprietaDocumento, osname, nomeClasseDocumento, content);
+        logger.info("Documento da creare : " + document);
         String newUUID = createIdWithParenthesis(uuid);
         document.setId(newUUID);
         document.setCustomPermission(Collections.singletonList(cartellaPadre.getCustomPermission()));

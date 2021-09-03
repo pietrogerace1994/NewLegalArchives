@@ -591,8 +591,10 @@ public class AttoServiceImpl extends BaseService<Atto, AttoView> implements Atto
 
 					proprietaDocumento.put("From", allegatoMultipartFile.getFrom());
 					proprietaDocumento.put("EmailSubject", allegatoMultipartFile.getOggetto());
-					proprietaDocumento.put("SentOn", DateUtil.toDate(allegatoMultipartFile.getDataInvio()));
-					proprietaDocumento.put("ReceivedOn",  DateUtil.toDate(allegatoMultipartFile.getDataRicezione()));
+					logger.info("Data invio " + allegatoMultipartFile.getDataInvio());
+					proprietaDocumento.put("SentOn", DateUtil.toDateForDDS(allegatoMultipartFile.getDataInvio()));
+					logger.info("Data ricezione " + allegatoMultipartFile.getDataRicezione());
+					proprietaDocumento.put("ReceivedOn",  DateUtil.toDateForDDS(allegatoMultipartFile.getDataRicezione()));
 				} else {
 					nomeClasseDocumentale = FileNetClassNames.PROTOCOLLO_DOCUMENT;
 					Documento documento = documentoDAO.creaDocumentoDB(uuid, nomeClasseDocumentale,
@@ -608,6 +610,7 @@ public class AttoServiceImpl extends BaseService<Atto, AttoView> implements Atto
 				byte[] contenuto = file.getBytes();
 				//@@DDS documentaleCryptDAO.creaDocumento(uuid, file.getOriginalFilename(), nomeClasseDocumentale,
 				//@@DDS		file.getContentType(), proprietaDocumento, cartellaPadre, contenuto);
+				logger.info("Proprietà documento : " + proprietaDocumento);
 				documentaleDdsCryptDAO.creaDocumento(uuid, file.getOriginalFilename(), nomeClasseDocumentale,
 						file.getContentType(), proprietaDocumento, cartellaPadre.getFolderPath(), contenuto);
 				documentiInseritiFileNet.put(uuid,false);

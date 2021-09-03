@@ -962,11 +962,13 @@ public class FascicoloServiceImpl extends BaseService<Fascicolo, FascicoloView> 
                         }
                         proprietaDocumento.put("CarbonCopy", ccList);
                     }
-
+                    logger.info("Allegato multipart file : " + allegatoMultipartFile );
                     proprietaDocumento.put("From", allegatoMultipartFile.getFrom());
                     proprietaDocumento.put("EmailSubject", allegatoMultipartFile.getOggetto());
-                    proprietaDocumento.put("SentOn", DateUtil.toDate(allegatoMultipartFile.getDataInvio()));
-                    proprietaDocumento.put("ReceivedOn", DateUtil.toDate(allegatoMultipartFile.getDataRicezione()));
+                    proprietaDocumento.put("SentOn", DateUtil.toDateForDDS(allegatoMultipartFile.getDataInvio()));
+                    logger.info("SentOn " + allegatoMultipartFile.getDataInvio());
+                    proprietaDocumento.put("ReceivedOn", DateUtil.toDateForDDS(allegatoMultipartFile.getDataRicezione()));
+                    logger.info("ReceivedOn " + allegatoMultipartFile.getDataRicezione());
                 } else {
                     nomeClasseDocumentale = FileNetClassNames.PROTOCOLLO_DOCUMENT;
                     Documento documento = documentoDAO.creaDocumentoDB(uuid, nomeClasseDocumentale,

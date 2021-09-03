@@ -95,7 +95,18 @@ import java.util.concurrent.TimeUnit;
 	        }
 	        return d;
 	    }
-	    
+
+	    public static String toDateForDDS(String date) {
+			try {
+				Date dateConverted = _data.parse(date);
+				String dateFormatted = _dataForDDS.format(dateConverted);
+				String dateFormattedForDDS = dateFormatted + "Z";
+				return dateFormattedForDDS;
+			} catch (Exception e) {
+				return null;
+			}
+		}
+
 	    public static Date toDateFromDB(String date) {
 	        Date d = null;
 	        try {
@@ -295,8 +306,11 @@ import java.util.concurrent.TimeUnit;
 
 	    private final static SimpleDateFormat _data = new SimpleDateFormat(
 	            "dd/MM/yyyy");
-	    
-	    private final static SimpleDateFormat _data_trattino = new SimpleDateFormat(
+
+		private final static SimpleDateFormat _dataForDDS = new SimpleDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSS");
+
+		private final static SimpleDateFormat _data_trattino = new SimpleDateFormat(
 	            "dd-MM-yyyy");
 	    
 	    private final static SimpleDateFormat _dataDB = new SimpleDateFormat(

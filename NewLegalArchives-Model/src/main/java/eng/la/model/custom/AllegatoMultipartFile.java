@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.springframework.web.multipart.MultipartFile;
@@ -140,4 +141,19 @@ public class AllegatoMultipartFile implements MultipartFile {
 		return originalFileName;
 	}
 
+	@Override
+	public String toString() {
+		return "AllegatoMultipartFile{" +
+				"name='" + name + '\'' +
+				", originalFileName='" + originalFileName + '\'' +
+				", contentType='" + contentType + '\'' +
+				", size=" + size +
+				", to=" + Arrays.toString(to) +
+				", cc=" + Arrays.toString(cc) +
+				", from='" + from + '\'' +
+				", oggetto='" + oggetto + '\'' +
+				", dataInvio='" + dataInvio + '\'' +
+				", dataRicezione='" + dataRicezione + '\'' +
+				'}';
+	}
 }
